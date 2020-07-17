@@ -3,4 +3,4 @@ project(Snake)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Snake main.cpp Board.cpp Board.h)
+add_executable(Snake main.cpp Board.cpp Board.h Snake.cpp Snake.h)

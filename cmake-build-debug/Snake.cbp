@@ -86,6 +86,12 @@
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Board.h">
 			<Option target="Snake"/>
 		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Snake.cpp">
+			<Option target="Snake"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Snake.h">
+			<Option target="Snake"/>
+		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/main.cpp">
 			<Option target="Snake"/>
 		</Unit>

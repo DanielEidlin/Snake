@@ -20,6 +20,10 @@ public:
 
     void draw();
 
+    int getHeight();
+
+    int getWidth();
+
 };
 
 

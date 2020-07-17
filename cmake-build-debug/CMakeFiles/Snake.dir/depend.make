@@ -4,6 +4,9 @@
 CMakeFiles/Snake.dir/Board.cpp.o: ../Board.cpp
 CMakeFiles/Snake.dir/Board.cpp.o: ../Board.h
 
+CMakeFiles/Snake.dir/Snake.cpp.o: ../Snake.cpp
+CMakeFiles/Snake.dir/Snake.cpp.o: ../Snake.h
+
 CMakeFiles/Snake.dir/main.cpp.o: ../Board.h
 CMakeFiles/Snake.dir/main.cpp.o: ../main.cpp
 

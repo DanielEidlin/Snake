@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/danieleidlin/CLionProjects/Snake/Board.cpp
-Board.h
 /Users/danieleidlin/CLionProjects/Snake/Board.h
+
+/Users/danieleidlin/CLionProjects/Snake/Snake.cpp
+Snake.h
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
 iostream
 -
-string
+
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
+utility
 -
 
+/Users/danieleidlin/CLionProjects/Snake/main.cpp
+iostream
+-
+Board.h
 /Users/danieleidlin/CLionProjects/Snake/Board.h
 
