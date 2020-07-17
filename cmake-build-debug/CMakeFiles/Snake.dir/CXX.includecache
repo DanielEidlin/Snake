@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/danieleidlin/CLionProjects/Snake/Board.cpp
+Board.h
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+iostream
+-
+string
+-
+
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+
