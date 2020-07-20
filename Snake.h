@@ -19,9 +19,9 @@ public:
 
     ~Snake();
 
-    std::pair<int, int> getHeadCoordinates();
+    std::pair<int, int> getHeadCoordinates() const;
 
-    void setHeadCoordinates(std::pair<int, int> newCoordinates);
+    void setHeadCoordinates(std::pair<int, int> const& newCoordinates);
 
 };
 

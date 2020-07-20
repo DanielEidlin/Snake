@@ -11,10 +11,10 @@ Snake::~Snake() {
     std::cout << "Deconstructing Snake" << std::endl;
 }
 
-std::pair<int, int> Snake::getHeadCoordinates() {
+std::pair<int, int> Snake::getHeadCoordinates() const {
     return headCoordinates;
 }
 
-void Snake::setHeadCoordinates(std::pair<int, int> newCoordinates) {
+void Snake::setHeadCoordinates(std::pair<int, int> const& newCoordinates) {
     headCoordinates = newCoordinates;
 }

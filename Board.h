@@ -18,11 +18,11 @@ public:
 
     ~Board();
 
-    void draw();
+    void draw() const ;
 
-    int getHeight();
+    int getHeight() const;
 
-    int getWidth();
+    int getWidth() const;
 
 };
 
