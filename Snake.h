@@ -6,13 +6,14 @@
 #define SNAKE_SNAKE_H
 
 #include <utility>
+#include <vector>
 
 
 class Snake {
 private:
     int length;
     char body;
-    std::pair<int, int> headCoordinates;
+    std::vector<std::pair<int, int>> snakeCoordinates;
 
 public:
     Snake(std::pair<int, int> spawnCoordinates);
@@ -21,7 +22,6 @@ public:
 
     std::pair<int, int> getHeadCoordinates() const;
 
-    void setHeadCoordinates(std::pair<int, int> const& newCoordinates);
 
 };
 

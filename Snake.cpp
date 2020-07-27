@@ -5,16 +5,12 @@
 #include "Snake.h"
 #include <iostream>
 
-Snake::Snake(std::pair<int, int> spawnCoordinates) : length(1), body('$'), headCoordinates(spawnCoordinates) {}
-
-Snake::~Snake() {
-    std::cout << "Deconstructing Snake" << std::endl;
+Snake::Snake(std::pair<int, int> spawnCoordinates) : length(1), body('$') {
+    snakeCoordinates.insert(snakeCoordinates.begin(), spawnCoordinates);  // Ask Bary if there is a better way to do it
 }
+
+Snake::~Snake() {}
 
 std::pair<int, int> Snake::getHeadCoordinates() const {
-    return headCoordinates;
-}
-
-void Snake::setHeadCoordinates(std::pair<int, int> const& newCoordinates) {
-    headCoordinates = newCoordinates;
+    return snakeCoordinates.front();
 }
