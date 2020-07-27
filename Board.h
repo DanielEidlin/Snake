@@ -4,7 +4,7 @@
 
 #ifndef SNAKE_BOARD_H
 #define SNAKE_BOARD_H
-
+#include <curses.h>
 
 class Board {
 
@@ -12,6 +12,7 @@ private:
     int height;
     int width;
     char border_sign;
+    WINDOW* win;
 
 public:
     Board(int height, int width, char border_sign = '*');
@@ -23,6 +24,8 @@ public:
     int getHeight() const;
 
     int getWidth() const;
+
+    void getInput() const;
 
 };
 

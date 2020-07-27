@@ -3,22 +3,23 @@
 //
 
 #include "Board.h"
-#include <iostream>
-#include <string>
+#include <curses.h>
 
-Board::Board(int height, int width, char border_sign) : height(height / 2 - 1), width(width),
-                                                        border_sign(border_sign) {}
+Board::Board(int height, int width, char border_sign) : height(height / 2 - 1), width(width), border_sign(border_sign) {
+    initscr();  // ncurses initializer
+    noecho();   // disable echo
+    cbreak();   // read one char at a time
+    keypad(win, TRUE);  // allow input of special keys
+    win = newwin(this->height, this->width, 0, 0);  // create new window
+    box(win, 0, 0); // create border
+}
 
 Board::~Board() {
-    std::cout << "Destructing Board" << std::endl;
+    endwin();   // ncurses reset function
 }
 
 void Board::draw() const {
-    std::cout << std::string(width, border_sign) << std::endl;
-    for (int i = 0; i < height; i++) {
-        std::cout << border_sign << std::string(width - 2, ' ') << border_sign << std::endl;
-    }
-    std::cout << std::string(width, border_sign) << std::endl;
+    wrefresh(win);  // refresh window
 }
 
 int Board::getHeight() const {
@@ -27,4 +28,27 @@ int Board::getHeight() const {
 
 int Board::getWidth() const {
     return width;
+}
+
+void Board::getInput() const {
+    int ch = wgetch(win);
+
+    switch (ch) {
+        case KEY_RIGHT:
+            // move right
+            break;
+        case KEY_LEFT:
+            // move left
+            break;
+        case KEY_UP:
+            // move up
+            break;
+        case KEY_DOWN:
+            // move down
+            break;
+        default:
+            // do nothing
+            break;
+
+    }
 }
