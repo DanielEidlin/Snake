@@ -33,12 +33,18 @@ void Snake::move(int direction) {
             break;
         case 1:
             // move left
+            snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second));
+            snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         case 2:
             // move up
+            snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1));
+            snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         case 3:
             // move down
+            snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1));
+            snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         default:
             // do nothing
