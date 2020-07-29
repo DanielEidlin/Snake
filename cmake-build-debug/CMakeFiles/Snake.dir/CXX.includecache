@@ -6,21 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/Users/danieleidlin/CLionProjects/Snake/Board.cpp
+Board.h
 /Users/danieleidlin/CLionProjects/Snake/Board.h
 curses.h
 -
+iostream
+-
+
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+curses.h
+-
+Snake.h
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
 
 /Users/danieleidlin/CLionProjects/Snake/Snake.h
 utility
 -
-
-/Users/danieleidlin/CLionProjects/Snake/main.cpp
-iostream
+vector
 -
-stdlib.h
--
-Board.h
-/Users/danieleidlin/CLionProjects/Snake/Board.h
-Snake.h
-/Users/danieleidlin/CLionProjects/Snake/Snake.h
 

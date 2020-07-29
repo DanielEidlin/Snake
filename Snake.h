@@ -16,12 +16,17 @@ private:
     std::vector<std::pair<int, int>> snakeCoordinates;
 
 public:
+    Snake();
+
     Snake(std::pair<int, int> spawnCoordinates);
 
     ~Snake();
 
     std::pair<int, int> getHeadCoordinates() const;
 
+    std::vector<std::pair<int, int>> getSnakeCoordinates() const;
+
+    void move(int direction);
 
 };
 
