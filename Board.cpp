@@ -13,6 +13,7 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     std::pair<int, int> spawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
     snake = Snake(spawnCoordinates);
     initscr();  // ncurses initializer
+    curs_set(0);    // hide cursor
     noecho();   // disable echo
     cbreak();   // read one char at a time
     win = newwin(this->height, this->width, 0, 0);  // create new window
