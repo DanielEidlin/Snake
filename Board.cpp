@@ -49,19 +49,19 @@ void Board::getInput() {
     switch (ch) {
         case KEY_RIGHT:
             // move right
-            snake.move(0);
+            snake.move(Direction::Right);
             break;
         case KEY_LEFT:
             // move left
-            snake.move(1);
+            snake.move(Direction::Left);
             break;
         case KEY_UP:
             // move up
-            snake.move(2);
+            snake.move(Direction::Up);
             break;
         case KEY_DOWN:
             // move down
-            snake.move(3);
+            snake.move(Direction::Down);
             break;
         default:
             // do nothing

@@ -22,26 +22,26 @@ std::vector<std::pair<int, int>> Snake::getSnakeCoordinates() const {
     return snakeCoordinates;
 }
 
-void Snake::move(int direction) {
+void Snake::move(Direction direction) {
     std::pair<int, int> headCoordinates = getHeadCoordinates();
 
     switch (direction) {
-        case 0:
+        case Direction::Right:
             // move right
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second));
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
-        case 1:
+        case Direction::Left:
             // move left
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second));
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
-        case 2:
+        case Direction::Up:
             // move up
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1));
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
-        case 3:
+        case Direction::Down:
             // move down
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1));
             snakeCoordinates.erase(snakeCoordinates.begin());

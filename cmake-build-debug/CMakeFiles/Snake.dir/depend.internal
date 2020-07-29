@@ -4,11 +4,14 @@
 CMakeFiles/Snake.dir/Board.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Board.cpp
  /Users/danieleidlin/CLionProjects/Snake/Board.h
+ /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
 CMakeFiles/Snake.dir/Snake.cpp.o
+ /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.cpp
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
 CMakeFiles/Snake.dir/main.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Board.h
+ /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
  /Users/danieleidlin/CLionProjects/Snake/main.cpp

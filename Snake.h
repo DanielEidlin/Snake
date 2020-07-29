@@ -7,6 +7,7 @@
 
 #include <utility>
 #include <vector>
+#include "Direction.h"
 
 
 class Snake {
@@ -26,7 +27,7 @@ public:
 
     std::vector<std::pair<int, int>> getSnakeCoordinates() const;
 
-    void move(int direction);
+    void move(Direction direction);
 
 };
 
