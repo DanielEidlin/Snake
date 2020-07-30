@@ -6,7 +6,7 @@
 
 Snake::Snake() : length(0), body('$'), direction(Direction::None), movable(false) {}
 
-Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), body('$'), direction(Direction::None),
+Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), body('$'), direction(Direction::Right),
                                                                  movable(false),
                                                                  previousTailCoordinates(spawnCoordinates) {
     for (int i = 0; i < this->length; i++) {
