@@ -87,9 +87,23 @@ Snake &Board::getSnake() {
 }
 
 bool Board::snakeCollided() const {
-    int xSnakeHeadCoordinates = snake.getHeadCoordinates().first;
-    int ySnakeHeadCoordinates = snake.getHeadCoordinates().second;
+    std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
+    std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
+    int xSnakeHeadCoordinates = headCoordinates.first;
+    int ySnakeHeadCoordinates = headCoordinates.second;
 
-    return xSnakeHeadCoordinates == 0 || xSnakeHeadCoordinates == width - 1 || ySnakeHeadCoordinates == 0 ||
-           ySnakeHeadCoordinates == height - 1;
+    bool bodyCollision = false;
+    bool borderCollision =
+            xSnakeHeadCoordinates == 0 || xSnakeHeadCoordinates == width - 1 || ySnakeHeadCoordinates == 0 ||
+            ySnakeHeadCoordinates == height - 1;
+
+    for (int i = 0; i < snakeCoordinates.size(); i++) {
+        if (headCoordinates == snakeCoordinates[i]) {
+            bodyCollision = true;
+            break;
+        }
+    }
+
+    return bodyCollision || borderCollision;
+
 }
