@@ -15,6 +15,7 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     noecho();   // disable echo
     cbreak();   // read one char at a time
     win = newwin(this->height, this->width, 0, 0);  // create new window
+    nodelay(win, TRUE); // make wgetch non-blocking
     keypad(win, TRUE);  // allow input of special keys
     box(win, 0, 0); // create border
 }
@@ -51,7 +52,6 @@ void Board::getInput() {
                 // move right
                 snake.setCanMove(true);
                 snake.setDirection(Direction::Right);
-                wtimeout(win, snake.getSpeed(Direction::Right)); // set wgetch delay
             }
             break;
         case KEY_LEFT:
@@ -59,7 +59,6 @@ void Board::getInput() {
                 // move left
                 snake.setCanMove(true);
                 snake.setDirection(Direction::Left);
-                wtimeout(win, snake.getSpeed(Direction::Left)); // set wgetch delay
             }
             break;
         case KEY_UP:
@@ -67,7 +66,6 @@ void Board::getInput() {
                 // move up
                 snake.setCanMove(true);
                 snake.setDirection(Direction::Up);
-                wtimeout(win, snake.getSpeed(Direction::Up)); // set wgetch delay
             }
             break;
         case KEY_DOWN:
@@ -75,7 +73,6 @@ void Board::getInput() {
                 // move down
                 snake.setCanMove(true);
                 snake.setDirection(Direction::Down);
-                wtimeout(win, snake.getSpeed(Direction::Down)); // set wgetch delay
             }
             break;
         default:

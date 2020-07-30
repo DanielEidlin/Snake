@@ -1,7 +1,7 @@
 #include <iostream>
-#include <stdlib.h>
 #include "Board.h"
 #include "Snake.h"
+#include <unistd.h>
 
 int main() {
     std::cout << "Starting game!" << std::endl;
@@ -12,6 +12,7 @@ int main() {
             snake.move();
         board.draw();
         board.getInput();
+        usleep(200000);
     }
 
     return 0;

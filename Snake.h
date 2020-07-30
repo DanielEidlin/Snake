@@ -38,7 +38,7 @@ public:
 
     void setDirection(Direction newDirection);
 
-    int getSpeed(Direction direction) const;
+    int getSpeed() const;
 
     std::pair<int, int> getPreviousTailCoordinates() const;
 
