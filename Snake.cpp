@@ -6,9 +6,12 @@
 
 Snake::Snake() : length(0), body('$'), direction(Direction::None), HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {}
 
-Snake::Snake(std::pair<int, int> spawnCoordinates) : length(1), body('$'), direction(Direction::None),
-                                                     HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {
-    snakeCoordinates.insert(snakeCoordinates.begin(), spawnCoordinates);
+Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), body('$'), direction(Direction::None),
+                                                                 HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {
+    for (int i = 0; i < this->length; i++) {
+        snakeCoordinates.insert(snakeCoordinates.begin(),
+                                std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second));
+    }
 }
 
 Snake::~Snake() {}

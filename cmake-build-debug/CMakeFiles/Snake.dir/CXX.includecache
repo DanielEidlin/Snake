@@ -20,10 +20,6 @@ Snake.h
 
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
 
-/Users/danieleidlin/CLionProjects/Snake/Snake.cpp
-Snake.h
-/Users/danieleidlin/CLionProjects/Snake/Snake.h
-
 /Users/danieleidlin/CLionProjects/Snake/Snake.h
 utility
 -
@@ -31,14 +27,4 @@ vector
 -
 Direction.h
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
-
-/Users/danieleidlin/CLionProjects/Snake/main.cpp
-iostream
--
-stdlib.h
--
-Board.h
-/Users/danieleidlin/CLionProjects/Snake/Board.h
-Snake.h
-/Users/danieleidlin/CLionProjects/Snake/Snake.h
 

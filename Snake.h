@@ -22,7 +22,7 @@ private:
 public:
     Snake();
 
-    Snake(std::pair<int, int> spawnCoordinates);
+    Snake(int length, std::pair<int, int> spawnCoordinates);
 
     ~Snake();
 

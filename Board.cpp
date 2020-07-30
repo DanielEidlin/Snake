@@ -6,11 +6,10 @@
 #include <curses.h>
 
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign) {
-    srand((unsigned) time(0));  // reset seed
-    int randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
-    int randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
-    std::pair<int, int> spawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
-    snake = Snake(spawnCoordinates);
+    int xCoordinate = this->width / 2;
+    int yCoordinate = this->height / 2;
+    std::pair<int, int> spawnCoordinates = std::pair<int, int>(xCoordinate, yCoordinate);
+    snake = Snake(3, spawnCoordinates);
     initscr();  // ncurses initializer
     curs_set(0);    // hide cursor
     noecho();   // disable echo
