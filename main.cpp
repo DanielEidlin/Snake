@@ -11,9 +11,11 @@ int main() {
         board.getInput();
         if (snake.CanMove())
             snake.move();
-        if (board.snakeCollided())
+        board.draw();   // draw the state of the game
+        if (board.snakeCollided()) {
+            usleep(300000); // delay for 300 ms to make snake collision detectable
             break;
-        board.draw();
+        }
         usleep(110000); /* delay for 110 ms. if you wonder why 110 ms:
                         https://github.com/romanedgn/snake-game/blob/master/fSnakeGame.cpp */
     }
