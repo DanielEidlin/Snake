@@ -12,7 +12,7 @@ int main() {
             snake.move();
         board.draw();
         board.getInput();
-        usleep(200000);
+        usleep(200000); // delay for 200 ms
     }
 
     return 0;
