@@ -18,6 +18,7 @@ private:
     int VERTICAL_SPEED;
     Direction direction;
     std::vector<std::pair<int, int>> snakeCoordinates;
+    std::pair<int, int> previousTailCoordinates;
 
 public:
     Snake();
@@ -37,6 +38,8 @@ public:
     void setDirection(Direction newDirection);
 
     int getSpeed(Direction direction) const;
+
+    std::pair<int, int> getPreviousTailCoordinates() const;
 
 };
 

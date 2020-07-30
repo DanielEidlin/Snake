@@ -7,7 +7,8 @@
 Snake::Snake() : length(0), body('$'), direction(Direction::None), HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {}
 
 Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), body('$'), direction(Direction::None),
-                                                                 HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {
+                                                                 HORIZONTAL_SPEED(250), VERTICAL_SPEED(450),
+                                                                 previousTailCoordinates(spawnCoordinates) {
     for (int i = 0; i < this->length; i++) {
         snakeCoordinates.insert(snakeCoordinates.begin(),
                                 std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second));
@@ -31,21 +32,25 @@ void Snake::move() {
         case Direction::Right:
             // move right
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second));
+            previousTailCoordinates = snakeCoordinates.front();
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         case Direction::Left:
             // move left
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second));
+            previousTailCoordinates = snakeCoordinates.front();
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         case Direction::Up:
             // move up
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1));
+            previousTailCoordinates = snakeCoordinates.front();
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         case Direction::Down:
             // move down
             snakeCoordinates.push_back(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1));
+            previousTailCoordinates = snakeCoordinates.front();
             snakeCoordinates.erase(snakeCoordinates.begin());
             break;
         default:
@@ -69,4 +74,8 @@ int Snake::getSpeed(Direction direction) const {
     } else {
         return VERTICAL_SPEED;
     }
+}
+
+std::pair<int, int> Snake::getPreviousTailCoordinates() const {
+    return previousTailCoordinates;
 }

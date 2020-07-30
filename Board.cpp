@@ -25,6 +25,9 @@ Board::~Board() {
 
 void Board::draw() const {
     std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
+    std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
+    mvwaddch(win, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
+
     for (int i = 0; i < snakeCoordinates.size(); i++) {
         mvwaddch(win, snakeCoordinates[i].second, snakeCoordinates[i].first, '$');
     }
@@ -41,8 +44,6 @@ int Board::getWidth() const {
 
 void Board::getInput() {
     int ch = wgetch(win);
-    std::pair<int, int> snakeHeadCoordinates = snake.getHeadCoordinates();
-    mvwaddch(win, snakeHeadCoordinates.second, snakeHeadCoordinates.first, ' ');
 
     switch (ch) {
         case KEY_RIGHT:
