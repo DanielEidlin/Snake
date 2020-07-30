@@ -82,6 +82,14 @@ void Board::getInput() {
     }
 }
 
-Snake& Board::getSnake() {
+Snake &Board::getSnake() {
     return snake;
+}
+
+bool Board::snakeCollided() const {
+    int xSnakeHeadCoordinates = snake.getHeadCoordinates().first;
+    int ySnakeHeadCoordinates = snake.getHeadCoordinates().second;
+
+    return xSnakeHeadCoordinates == 0 || xSnakeHeadCoordinates == width - 1 || ySnakeHeadCoordinates == 0 ||
+           ySnakeHeadCoordinates == height - 1;
 }

@@ -31,6 +31,8 @@ public:
 
     Snake& getSnake();
 
+    bool snakeCollided() const;
+
 };
 
 

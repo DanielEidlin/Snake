@@ -10,11 +10,14 @@ int main() {
     while (true) {  // game loop
         if (snake.CanMove())
             snake.move();
+        if (board.snakeCollided())
+            break;
         board.draw();
         board.getInput();
         usleep(110000); /* delay for 110 ms. if you wonder why 110 ms:
                         https://github.com/romanedgn/snake-game/blob/master/fSnakeGame.cpp */
     }
+    // board.lose();
 
     return 0;
 }
