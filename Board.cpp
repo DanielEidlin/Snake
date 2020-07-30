@@ -47,24 +47,36 @@ void Board::getInput() {
 
     switch (ch) {
         case KEY_RIGHT:
-            // move right
-            snake.setDirection(Direction::Right);
-            wtimeout(win, snake.getSpeed(Direction::Right)); // set wgetch delay
+            if (snake.getDirection() != Direction::Left) {
+                // move right
+                snake.setCanMove(true);
+                snake.setDirection(Direction::Right);
+                wtimeout(win, snake.getSpeed(Direction::Right)); // set wgetch delay
+            }
             break;
         case KEY_LEFT:
-            // move left
-            snake.setDirection(Direction::Left);
-            wtimeout(win, snake.getSpeed(Direction::Left)); // set wgetch delay
+            if (snake.getDirection() != Direction::Right) {
+                // move left
+                snake.setCanMove(true);
+                snake.setDirection(Direction::Left);
+                wtimeout(win, snake.getSpeed(Direction::Left)); // set wgetch delay
+            }
             break;
         case KEY_UP:
-            // move up
-            snake.setDirection(Direction::Up);
-            wtimeout(win, snake.getSpeed(Direction::Up)); // set wgetch delay
+            if (snake.getDirection() != Direction::Down) {
+                // move up
+                snake.setCanMove(true);
+                snake.setDirection(Direction::Up);
+                wtimeout(win, snake.getSpeed(Direction::Up)); // set wgetch delay
+            }
             break;
         case KEY_DOWN:
-            // move down
-            snake.setDirection(Direction::Down);
-            wtimeout(win, snake.getSpeed(Direction::Down)); // set wgetch delay
+            if (snake.getDirection() != Direction::Up) {
+                // move down
+                snake.setCanMove(true);
+                snake.setDirection(Direction::Down);
+                wtimeout(win, snake.getSpeed(Direction::Down)); // set wgetch delay
+            }
             break;
         default:
             // do nothing

@@ -6,8 +6,10 @@
 int main() {
     std::cout << "Starting game!" << std::endl;
     Board board = Board(11, 25);
+    Snake& snake = board.getSnake();
     while (true) {  // game loop
-        board.getSnake().move();
+        if (snake.CanMove())
+            snake.move();
         board.draw();
         board.getInput();
     }

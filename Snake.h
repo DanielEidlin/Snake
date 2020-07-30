@@ -14,6 +14,7 @@ class Snake {
 private:
     int length;
     char body;
+    bool movable;
     int HORIZONTAL_SPEED;
     int VERTICAL_SPEED;
     Direction direction;
@@ -40,6 +41,10 @@ public:
     int getSpeed(Direction direction) const;
 
     std::pair<int, int> getPreviousTailCoordinates() const;
+
+    bool CanMove() const;
+
+    void setCanMove(bool status);
 
 };
 
