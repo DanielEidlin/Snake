@@ -86,7 +86,7 @@ Snake &Board::getSnake() {
     return snake;
 }
 
-bool Board::snakeCollided() const {
+bool Board::snakeCollided() const { // TODO: Fix bug when snake starts right it crashes.
     std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
     std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
     int xSnakeHeadCoordinates = headCoordinates.first;
@@ -97,7 +97,7 @@ bool Board::snakeCollided() const {
             xSnakeHeadCoordinates == 0 || xSnakeHeadCoordinates == width - 1 || ySnakeHeadCoordinates == 0 ||
             ySnakeHeadCoordinates == height - 1;
 
-    for (int i = 0; i < snakeCoordinates.size(); i++) {
+    for (int i = 0; i < snakeCoordinates.size() - 1; i++) {
         if (headCoordinates == snakeCoordinates[i]) {
             bodyCollision = true;
             break;

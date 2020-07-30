@@ -10,8 +10,7 @@ Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length),
                                                                  movable(false),
                                                                  previousTailCoordinates(spawnCoordinates) {
     for (int i = 0; i < this->length; i++) {
-        snakeCoordinates.insert(snakeCoordinates.begin(),
-                                std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second));
+        snakeCoordinates.push_back(std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second));
     }
 }
 
