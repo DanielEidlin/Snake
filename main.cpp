@@ -12,7 +12,8 @@ int main() {
             snake.move();
         board.draw();
         board.getInput();
-        usleep(200000); // delay for 200 ms
+        usleep(110000); /* delay for 110 ms. if you wonder why 110 ms:
+                        https://github.com/romanedgn/snake-game/blob/master/fSnakeGame.cpp */
     }
 
     return 0;
