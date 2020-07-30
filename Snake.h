@@ -15,8 +15,6 @@ private:
     int length;
     char body;
     bool movable;
-    int HORIZONTAL_SPEED;
-    int VERTICAL_SPEED;
     Direction direction;
     std::vector<std::pair<int, int>> snakeCoordinates;
     std::pair<int, int> previousTailCoordinates;
@@ -37,8 +35,6 @@ public:
     Direction getDirection() const;
 
     void setDirection(Direction newDirection);
-
-    int getSpeed() const;
 
     std::pair<int, int> getPreviousTailCoordinates() const;
 

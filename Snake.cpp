@@ -4,12 +4,10 @@
 
 #include "Snake.h"
 
-Snake::Snake() : length(0), body('$'), direction(Direction::None), movable(false), HORIZONTAL_SPEED(200000),
-                 VERTICAL_SPEED(250000) {}
+Snake::Snake() : length(0), body('$'), direction(Direction::None), movable(false) {}
 
 Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), body('$'), direction(Direction::None),
-                                                                 movable(false), HORIZONTAL_SPEED(200000),
-                                                                 VERTICAL_SPEED(250000),
+                                                                 movable(false),
                                                                  previousTailCoordinates(spawnCoordinates) {
     for (int i = 0; i < this->length; i++) {
         snakeCoordinates.insert(snakeCoordinates.begin(),
@@ -68,14 +66,6 @@ Direction Snake::getDirection() const {
 
 void Snake::setDirection(Direction newDirection) {
     direction = newDirection;
-}
-
-int Snake::getSpeed() const {
-    if (direction == Direction::Right || direction == Direction::Left) {
-        return HORIZONTAL_SPEED;
-    } else {
-        return VERTICAL_SPEED;
-    }
 }
 
 std::pair<int, int> Snake::getPreviousTailCoordinates() const {
