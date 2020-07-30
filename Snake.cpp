@@ -3,12 +3,11 @@
 //
 
 #include "Snake.h"
-#include <iostream>
 
-Snake::Snake() : length(0), body('$'){}
+Snake::Snake() : length(0), body('$'), direction(Direction::None), HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {}
 
-Snake::Snake(std::pair<int, int> spawnCoordinates) : length(1), body('$') {
-    std::cout << spawnCoordinates.first << ", " << spawnCoordinates.second << std::endl;
+Snake::Snake(std::pair<int, int> spawnCoordinates) : length(1), body('$'), direction(Direction::None),
+                                                     HORIZONTAL_SPEED(250), VERTICAL_SPEED(450) {
     snakeCoordinates.insert(snakeCoordinates.begin(), spawnCoordinates);
 }
 
@@ -22,7 +21,7 @@ std::vector<std::pair<int, int>> Snake::getSnakeCoordinates() const {
     return snakeCoordinates;
 }
 
-void Snake::move(Direction direction) {
+void Snake::move() {
     std::pair<int, int> headCoordinates = getHeadCoordinates();
 
     switch (direction) {
@@ -50,5 +49,21 @@ void Snake::move(Direction direction) {
             // do nothing
             break;
 
+    }
+}
+
+Direction Snake::getDirection() const {
+    return direction;
+}
+
+void Snake::setDirection(Direction newDirection) {
+    direction = newDirection;
+}
+
+int Snake::getSpeed(Direction direction) const {
+    if (direction == Direction::Right || direction == Direction::Left) {
+        return HORIZONTAL_SPEED;
+    } else {
+        return VERTICAL_SPEED;
     }
 }

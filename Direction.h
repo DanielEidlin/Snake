@@ -9,7 +9,8 @@ enum class Direction {
     Right,
     Left,
     Up,
-    Down
+    Down,
+    None
 };
 
 #endif //SNAKE_DIRECTION_H

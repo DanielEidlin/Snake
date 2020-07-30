@@ -4,7 +4,6 @@
 
 #include "Board.h"
 #include <curses.h>
-#include <iostream>
 
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign) {
     srand((unsigned) time(0));  // reset seed
@@ -49,23 +48,31 @@ void Board::getInput() {
     switch (ch) {
         case KEY_RIGHT:
             // move right
-            snake.move(Direction::Right);
+            snake.setDirection(Direction::Right);
+            wtimeout(win, snake.getSpeed(Direction::Right)); // set wgetch delay
             break;
         case KEY_LEFT:
             // move left
-            snake.move(Direction::Left);
+            snake.setDirection(Direction::Left);
+            wtimeout(win, snake.getSpeed(Direction::Left)); // set wgetch delay
             break;
         case KEY_UP:
             // move up
-            snake.move(Direction::Up);
+            snake.setDirection(Direction::Up);
+            wtimeout(win, snake.getSpeed(Direction::Up)); // set wgetch delay
             break;
         case KEY_DOWN:
             // move down
-            snake.move(Direction::Down);
+            snake.setDirection(Direction::Down);
+            wtimeout(win, snake.getSpeed(Direction::Down)); // set wgetch delay
             break;
         default:
             // do nothing
             break;
 
     }
+}
+
+Snake& Board::getSnake() {
+    return snake;
 }

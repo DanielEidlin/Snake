@@ -29,6 +29,8 @@ public:
 
     void getInput();
 
+    Snake& getSnake();
+
 };
 
 

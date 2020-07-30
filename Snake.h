@@ -14,6 +14,9 @@ class Snake {
 private:
     int length;
     char body;
+    int HORIZONTAL_SPEED;
+    int VERTICAL_SPEED;
+    Direction direction;
     std::vector<std::pair<int, int>> snakeCoordinates;
 
 public:
@@ -27,7 +30,13 @@ public:
 
     std::vector<std::pair<int, int>> getSnakeCoordinates() const;
 
-    void move(Direction direction);
+    void move();
+
+    Direction getDirection() const;
+
+    void setDirection(Direction newDirection);
+
+    int getSpeed(Direction direction) const;
 
 };
 
