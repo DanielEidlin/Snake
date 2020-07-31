@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Apple.cpp">
+			<Option target="Snake"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Apple.h">
+			<Option target="Snake"/>
+		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Board.cpp">
 			<Option target="Snake"/>
 		</Unit>

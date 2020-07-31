@@ -143,6 +143,33 @@ Snake/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/build
 .PHONY : Snake/fast
 
+Apple.o: Apple.cpp.o
+
+.PHONY : Apple.o
+
+# target to build an object file
+Apple.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/Apple.cpp.o
+.PHONY : Apple.cpp.o
+
+Apple.i: Apple.cpp.i
+
+.PHONY : Apple.i
+
+# target to preprocess a source file
+Apple.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/Apple.cpp.i
+.PHONY : Apple.cpp.i
+
+Apple.s: Apple.cpp.s
+
+.PHONY : Apple.s
+
+# target to generate assembly for a file
+Apple.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/Apple.cpp.s
+.PHONY : Apple.cpp.s
+
 Board.o: Board.cpp.o
 
 .PHONY : Board.o
@@ -233,6 +260,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Snake"
+	@echo "... Apple.o"
+	@echo "... Apple.i"
+	@echo "... Apple.s"
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"

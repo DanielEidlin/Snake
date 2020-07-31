@@ -6,10 +6,18 @@
 #include <curses.h>
 
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign) {
+    // Initialize Snake ----------------------------------------------------------------------------------------
     int xCoordinate = this->width / 2;
     int yCoordinate = this->height / 2;
-    std::pair<int, int> spawnCoordinates = std::pair<int, int>(xCoordinate, yCoordinate);
-    snake = Snake(3, spawnCoordinates);
+    std::pair<int, int> snakeSpawnCoordinates = std::pair<int, int>(xCoordinate, yCoordinate);
+    snake = Snake(3, snakeSpawnCoordinates);
+    // Initialize Apple ----------------------------------------------------------------------------------------
+    srand((unsigned) time(0));
+    int randomXCoordinate = 1 + (rand() % (this->height - 2));    // Random x coordinate in the board's range
+    int randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
+    std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
+    apple = Apple(appleSpawnCoordinates);
+    // Initialize window ----------------------------------------------------------------------------------------
     initscr();  // ncurses initializer
     curs_set(0);    // hide cursor
     noecho();   // disable echo
@@ -28,10 +36,13 @@ void Board::draw() const {
     std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
     std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
     mvwaddch(win, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
+    std::pair<int, int> appleCoordinates = apple.getCoordinates();
 
     for (int i = 0; i < snakeCoordinates.size(); i++) {
-        mvwaddch(win, snakeCoordinates[i].second, snakeCoordinates[i].first, '$');
+        mvwaddch(win, snakeCoordinates[i].second, snakeCoordinates[i].first, snake.getBodyChar());
     }
+
+    mvwaddch(win, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
     wrefresh(win);  // refresh window
 }
 

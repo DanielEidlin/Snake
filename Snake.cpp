@@ -78,3 +78,7 @@ bool Snake::CanMove() const {
 void Snake::setCanMove(bool canMove) {
     movable = canMove;
 }
+
+char Snake::getBodyChar() const {
+    return body;
+}

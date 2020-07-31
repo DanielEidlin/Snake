@@ -6,6 +6,7 @@
 #define SNAKE_BOARD_H
 #include <curses.h>
 #include "Snake.h"
+#include "Apple.h"
 
 class Board {
 
@@ -15,6 +16,7 @@ private:
     char border_sign;
     WINDOW* win;
     Snake snake;
+    Apple apple;
 
 public:
     Board(int height, int width, char border_sign = '*');

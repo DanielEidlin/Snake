@@ -42,6 +42,8 @@ public:
 
     void setCanMove(bool status);
 
+    char getBodyChar() const;
+
 };
 
 

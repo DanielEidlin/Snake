@@ -6,11 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/Users/danieleidlin/CLionProjects/Snake/Apple.cpp
+Apple.h
+/Users/danieleidlin/CLionProjects/Snake/Apple.h
+
+/Users/danieleidlin/CLionProjects/Snake/Apple.h
+utility
+-
+
+/Users/danieleidlin/CLionProjects/Snake/Board.cpp
+Board.h
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+curses.h
+-
+
 /Users/danieleidlin/CLionProjects/Snake/Board.h
 curses.h
 -
 Snake.h
 /Users/danieleidlin/CLionProjects/Snake/Snake.h
+Apple.h
+/Users/danieleidlin/CLionProjects/Snake/Apple.h
 
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
 
