@@ -5,7 +5,7 @@
 
 int main() {
     std::cout << "Starting game!" << std::endl;
-    Board board = Board(11, 25);
+    Board board = Board(16, 35);
     Snake& snake = board.getSnake();
     while (true) {  // game loop
         board.getInput();

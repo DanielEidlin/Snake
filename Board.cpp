@@ -13,7 +13,7 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     snake = Snake(3, snakeSpawnCoordinates);
     // Initialize Apple ----------------------------------------------------------------------------------------
     srand((unsigned) time(0));
-    int randomXCoordinate = 1 + (rand() % (this->height - 2));    // Random x coordinate in the board's range
+    int randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
     int randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
     std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
     apple = Apple(appleSpawnCoordinates);
@@ -122,7 +122,7 @@ bool Board::snakeCollided() const {
 }
 
 void Board::spawnApple() {
-    int randomXCoordinate = 1 + (rand() % (this->height - 2));  // Random x coordinate in the board's range
+    int randomXCoordinate = 1 + (rand() % (this->width - 2));  // Random x coordinate in the board's range
     int randomYCoordinate = 1 + (rand() % (this->height - 2));  // Random y coordinate in the board's range
     std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
     apple.setPreviousCoordinates(apple.getCoordinates());
