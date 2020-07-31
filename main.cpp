@@ -11,7 +11,7 @@ int main() {
         board.getInput();
         if (snake.CanMove())
             snake.move();
-        board.checkAppleEngage();
+        board.checkAppleEngage();   // check if the snake engaged the apple
         board.draw();   // draw the state of the game
         if (board.snakeCollided()) {
             usleep(300000); // delay for 300 ms to make snake collision detectable
