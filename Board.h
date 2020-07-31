@@ -35,6 +35,10 @@ public:
 
     bool snakeCollided() const;
 
+    void spawnApple();
+
+    void checkAppleEngage();
+
 };
 
 

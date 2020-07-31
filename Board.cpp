@@ -37,6 +37,8 @@ void Board::draw() const {
     std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
     mvwaddch(win, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
+    std::pair<int, int> previousAppleCoordinates = apple.getPreviousCoordinates();
+    mvwaddch(win, previousAppleCoordinates.second, previousAppleCoordinates.first, ' ');
 
     for (int i = 0; i < snakeCoordinates.size(); i++) {
         mvwaddch(win, snakeCoordinates[i].second, snakeCoordinates[i].first, snake.getBodyChar());
@@ -97,7 +99,7 @@ Snake &Board::getSnake() {
     return snake;
 }
 
-bool Board::snakeCollided() const { // TODO: Fix bug when snake starts right it crashes.
+bool Board::snakeCollided() const {
     std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
     std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
     int xSnakeHeadCoordinates = headCoordinates.first;
@@ -117,4 +119,21 @@ bool Board::snakeCollided() const { // TODO: Fix bug when snake starts right it 
 
     return bodyCollision || borderCollision;
 
+}
+
+void Board::spawnApple() {
+    int randomXCoordinate = 1 + (rand() % (this->height - 2));  // Random x coordinate in the board's range
+    int randomYCoordinate = 1 + (rand() % (this->height - 2));  // Random y coordinate in the board's range
+    std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
+    apple.setPreviousCoordinates(apple.getCoordinates());
+    apple.setCoordinates(appleSpawnCoordinates);
+}
+
+void Board::checkAppleEngage() {
+    std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
+    std::pair<int, int> appleCoordinates = apple.getCoordinates();
+    if (headCoordinates == appleCoordinates) {
+        snake.setApple(true);
+        spawnApple();
+    }
 }

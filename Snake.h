@@ -18,6 +18,7 @@ private:
     Direction direction;
     std::vector<std::pair<int, int>> snakeCoordinates;
     std::pair<int, int> previousTailCoordinates;
+    bool apple;
 
 public:
     Snake();
@@ -43,6 +44,12 @@ public:
     void setCanMove(bool status);
 
     char getBodyChar() const;
+
+    void grow();
+
+    bool hasApple() const;
+
+    void setApple(bool hasApple);
 
 };
 

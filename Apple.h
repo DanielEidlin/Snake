@@ -11,6 +11,7 @@
 class Apple {
 private:
     std::pair<int, int> coordinates;
+    std::pair<int, int> previousCoordinates;
     char appleChar;
 
 public:
@@ -25,6 +26,10 @@ public:
     void setCoordinates(std::pair<int, int> newCoordinates);
 
     char getAppleChar() const;
+
+    std::pair<int, int> getPreviousCoordinates() const;
+
+    void setPreviousCoordinates(std::pair<int, int> newCoordinates);
 };
 
 
