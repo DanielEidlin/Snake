@@ -22,10 +22,15 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     curs_set(0);    // hide cursor
     noecho();   // disable echo
     cbreak();   // read one char at a time
-    win = newwin(this->height, this->width, 0, 0);  // create new window
+    win = newwin(this->height, this->width, 1, 0);  // create new window
     nodelay(win, TRUE); // make wgetch non-blocking
     keypad(win, TRUE);  // allow input of special keys
     box(win, 0, 0); // create border
+
+    // TODO: Make the size of the windows dynamically resizeable.
+    scoreWin = newwin(1, this->width, 0, 0);
+    mvwaddstr(scoreWin, 0, 0, "Score: 0");
+
 }
 
 Board::~Board() {
@@ -56,6 +61,7 @@ void Board::draw() const {
 
     mvwaddch(win, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
     wrefresh(win);  // refresh window
+    wrefresh(scoreWin);
 }
 
 int Board::getHeight() const {

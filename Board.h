@@ -15,6 +15,7 @@ private:
     int width;
     char border_sign;
     WINDOW* win;
+    WINDOW* scoreWin;
     Snake snake;
     Apple apple;
 
