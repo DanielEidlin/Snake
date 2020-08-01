@@ -5,18 +5,19 @@
 #include "Snake.h"
 #include "BodyPart.h"
 
-Snake::Snake() : length(0), direction(Direction::None), movable(false), apple(false) {}
+Snake::Snake() : length(0), movable(false), apple(false) {}
 
-Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), direction(Direction::Right),
-                                                                 movable(false),
+Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length), movable(false),
                                                                  previousTailCoordinates(spawnCoordinates),
                                                                  apple(false) {
     for (int i = 0; i < this->length - 1; i++) {
-        BodyPart bodyPart = BodyPart(std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second), '*');
+        BodyPart bodyPart = BodyPart(std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second), '*',
+                                     Direction::Right);
         bodyParts.push_back(bodyPart);
     }
     BodyPart bodyPart = BodyPart(
-            std::pair<int, int>(spawnCoordinates.first + this->length - 1, spawnCoordinates.second), '>');
+            std::pair<int, int>(spawnCoordinates.first + this->length - 1, spawnCoordinates.second), '>',
+            Direction::Right);
     bodyParts.push_back(bodyPart);
 }
 
@@ -32,12 +33,14 @@ std::vector<BodyPart> Snake::getBodyParts() const {
 
 void Snake::move() {
     std::pair<int, int> headCoordinates = getHeadPart().getCoordinates();
+    Direction headDirection = getHeadPart().getDirection();
 
-    switch (direction) {
+    switch (headDirection) {
         case Direction::Right:
             // move right
             bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second), '>'));
+            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second), '>',
+                                         Direction::Right));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -47,7 +50,8 @@ void Snake::move() {
         case Direction::Left:
             // move left
             bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second), '<'));
+            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second), '<',
+                                         Direction::Left));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -57,7 +61,8 @@ void Snake::move() {
         case Direction::Up:
             // move up
             bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1), '^'));
+            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1), '^',
+                                         Direction::Up));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -67,7 +72,8 @@ void Snake::move() {
         case Direction::Down:
             // move down
             bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1), 'v'));
+            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1), 'v',
+                                         Direction::Down));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -79,14 +85,6 @@ void Snake::move() {
             break;
 
     }
-}
-
-Direction Snake::getDirection() const {
-    return direction;
-}
-
-void Snake::setDirection(Direction newDirection) {
-    direction = newDirection;
 }
 
 std::pair<int, int> Snake::getPreviousTailCoordinates() const {
@@ -107,4 +105,8 @@ bool Snake::hasApple() const {
 
 void Snake::setApple(bool hasApple) {
     apple = hasApple;
+}
+
+void Snake::changeHeadDirection(Direction newDirection) {
+    bodyParts.back().setDirection(newDirection);
 }

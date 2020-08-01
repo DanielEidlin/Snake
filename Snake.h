@@ -15,7 +15,6 @@ class Snake {
 private:
     int length;
     bool movable;
-    Direction direction;
     std::vector<BodyPart> bodyParts;
     std::pair<int, int> previousTailCoordinates;
     bool apple;
@@ -33,10 +32,6 @@ public:
 
     void move();
 
-    Direction getDirection() const;
-
-    void setDirection(Direction newDirection);
-
     std::pair<int, int> getPreviousTailCoordinates() const;
 
     bool CanMove() const;
@@ -48,6 +43,8 @@ public:
     bool hasApple() const;
 
     void setApple(bool hasApple);
+
+    void changeHeadDirection(Direction newDirection);
 
 };
 

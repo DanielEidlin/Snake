@@ -6,7 +6,9 @@
 
 BodyPart::BodyPart(const std::pair<int, int> &coordinates) : coordinates(coordinates) {}
 
-BodyPart::BodyPart(const std::pair<int, int> &coordinates, char symbol) : coordinates(coordinates), symbol(symbol){}
+BodyPart::BodyPart(const std::pair<int, int> &coordinates, char symbol, Direction direction) : coordinates(coordinates),
+                                                                                               symbol(symbol),
+                                                                                               direction(direction) {}
 
 BodyPart::~BodyPart() {}
 
@@ -24,4 +26,12 @@ char BodyPart::getSymbol() const {
 
 void BodyPart::setSymbol(char newSymbol) {
     symbol = newSymbol;
+}
+
+Direction BodyPart::getDirection() const {
+    return direction;
+}
+
+void BodyPart::setDirection(Direction newDirection) {
+    direction = newDirection;
 }

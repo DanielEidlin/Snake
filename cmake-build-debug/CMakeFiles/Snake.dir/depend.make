@@ -13,6 +13,7 @@ CMakeFiles/Snake.dir/Board.cpp.o: ../Snake.h
 
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../BodyPart.cpp
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../BodyPart.h
+CMakeFiles/Snake.dir/BodyPart.cpp.o: ../Direction.h
 
 CMakeFiles/Snake.dir/Snake.cpp.o: ../BodyPart.h
 CMakeFiles/Snake.dir/Snake.cpp.o: ../Direction.h

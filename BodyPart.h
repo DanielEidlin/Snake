@@ -7,16 +7,18 @@
 
 
 #include <utility>
+#include "Direction.h"
 
 class BodyPart {
 private:
     std::pair<int, int> coordinates;
     char symbol;
+    Direction direction;
 
 public:
     BodyPart(const std::pair<int, int> &coordinates);
 
-    BodyPart(const std::pair<int, int> &coordinates, char symbol);
+    BodyPart(const std::pair<int, int> &coordinates, char symbol, Direction direction);
 
     ~BodyPart();
 
@@ -27,6 +29,10 @@ public:
     char getSymbol() const;
 
     void setSymbol(char newSymbol);
+
+    Direction getDirection() const;
+
+    void setDirection(Direction newDirection);
 
 };
 

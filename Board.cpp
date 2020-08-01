@@ -62,31 +62,31 @@ void Board::getInput() {
 
     switch (ch) {
         case KEY_RIGHT:
-            if (snake.getDirection() != Direction::Left) {
+            if (snake.getHeadPart().getDirection() != Direction::Left) {
                 // move right
                 snake.setCanMove(true);
-                snake.setDirection(Direction::Right);
+                snake.changeHeadDirection(Direction::Right);
             }
             break;
         case KEY_LEFT:
-            if (snake.getDirection() != Direction::Right) {
+            if (snake.getHeadPart().getDirection() != Direction::Right) {
                 // move left
                 snake.setCanMove(true);
-                snake.setDirection(Direction::Left);
+                snake.changeHeadDirection(Direction::Left);
             }
             break;
         case KEY_UP:
-            if (snake.getDirection() != Direction::Down) {
+            if (snake.getHeadPart().getDirection() != Direction::Down) {
                 // move up
                 snake.setCanMove(true);
-                snake.setDirection(Direction::Up);
+                snake.changeHeadDirection(Direction::Up);
             }
             break;
         case KEY_DOWN:
-            if (snake.getDirection() != Direction::Up) {
+            if (snake.getHeadPart().getDirection() != Direction::Up) {
                 // move down
                 snake.setCanMove(true);
-                snake.setDirection(Direction::Down);
+                snake.changeHeadDirection(Direction::Down);
             }
             break;
         default:
