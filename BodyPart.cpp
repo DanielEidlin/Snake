@@ -4,15 +4,10 @@
 
 #include "BodyPart.h"
 
-std::map<Direction, char> BodyPart::headDirectionSymbols = {{Direction::Right, '>'},
-                                                            {Direction::Left,  '<'},
-                                                            {Direction::Up,    '^'},
-                                                            {Direction::Down,  'v'}};
-
-std::map<Direction, char> BodyPart::bodyDirectionSymbols = {{Direction::Right, '-'},
-                                                            {Direction::Left,  '-'},
-                                                            {Direction::Up,    '|'},
-                                                            {Direction::Down,  '|'}};
+std::map<Direction, char> BodyPart::directionSymbols = {{Direction::Right, '>'},
+                                                        {Direction::Left,  '<'},
+                                                        {Direction::Up,    '^'},
+                                                        {Direction::Down,  'v'}};
 
 BodyPart::BodyPart(const std::pair<int, int> &coordinates) : coordinates(coordinates) {}
 

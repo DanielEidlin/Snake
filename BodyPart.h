@@ -16,8 +16,7 @@ private:
     Direction direction;
 
 public:
-    static std::map<Direction, char> headDirectionSymbols;
-    static std::map<Direction, char> bodyDirectionSymbols;
+    static std::map<Direction, char> directionSymbols;
 
     BodyPart(const std::pair<int, int> &coordinates);
 

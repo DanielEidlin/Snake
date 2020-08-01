@@ -44,14 +44,14 @@ void Board::draw() const {
     for (int i = 0; i < snakeBodyParts.size() - 1; i++) {
         BodyPart currentBodyPart = snakeBodyParts[i];
         std::pair<int, int> bodyPartCoordinates = currentBodyPart.getCoordinates();
-        char bodyPartSymbol = BodyPart::bodyDirectionSymbols[currentBodyPart.getDirection()];
+        char bodyPartSymbol = BodyPart::directionSymbols[currentBodyPart.getDirection()];
         mvwaddch(win, bodyPartCoordinates.second, bodyPartCoordinates.first, bodyPartSymbol);
     }
 
     // Draw head part
     BodyPart headPart = snake.getHeadPart();
     std::pair<int, int> headPartCoordinates = headPart.getCoordinates();
-    char headPartSymbol = BodyPart::headDirectionSymbols[headPart.getDirection()];
+    char headPartSymbol = BodyPart::directionSymbols[headPart.getDirection()];
     mvwaddch(win, headPartCoordinates.second, headPartCoordinates.first, headPartSymbol);
 
     mvwaddch(win, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
