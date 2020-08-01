@@ -33,15 +33,16 @@ Board::~Board() {
 }
 
 void Board::draw() const {
-    std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
+    std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();
     std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
     mvwaddch(win, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
     std::pair<int, int> previousAppleCoordinates = apple.getPreviousCoordinates();
     mvwaddch(win, previousAppleCoordinates.second, previousAppleCoordinates.first, ' ');
 
-    for (int i = 0; i < snakeCoordinates.size(); i++) {
-        mvwaddch(win, snakeCoordinates[i].second, snakeCoordinates[i].first, snake.getBodyChar());
+    for (int i = 0; i < snakeBodyParts.size(); i++) {
+        std::pair<int, int> bodyPartCoordinates = snakeBodyParts[i].getCoordinates();
+        mvwaddch(win, bodyPartCoordinates.second, bodyPartCoordinates.first, snake.getBodyChar());
     }
 
     mvwaddch(win, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
@@ -100,8 +101,8 @@ Snake &Board::getSnake() {
 }
 
 bool Board::snakeCollided() const {
-    std::vector<std::pair<int, int>> snakeCoordinates = snake.getSnakeCoordinates();
-    std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
+    std::vector<BodyPart> bodyParts = snake.getBodyParts();
+    std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
     int xSnakeHeadCoordinates = headCoordinates.first;
     int ySnakeHeadCoordinates = headCoordinates.second;
 
@@ -110,8 +111,9 @@ bool Board::snakeCollided() const {
             xSnakeHeadCoordinates == 0 || xSnakeHeadCoordinates == width - 1 || ySnakeHeadCoordinates == 0 ||
             ySnakeHeadCoordinates == height - 1;
 
-    for (int i = 0; i < snakeCoordinates.size() - 1; i++) {
-        if (headCoordinates == snakeCoordinates[i]) {
+    for (int i = 0; i < bodyParts.size() - 1; i++) {
+        std::pair<int, int> bodyPartCoordinates = bodyParts[i].getCoordinates();
+        if (headCoordinates == bodyPartCoordinates) {
             bodyCollision = true;
             break;
         }
@@ -130,7 +132,7 @@ void Board::spawnApple() {
 }
 
 void Board::checkAppleEngage() {
-    std::pair<int, int> headCoordinates = snake.getHeadCoordinates();
+    std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
     if (headCoordinates == appleCoordinates) {
         snake.setApple(true);

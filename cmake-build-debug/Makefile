@@ -197,6 +197,33 @@ Board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/Board.cpp.s
 .PHONY : Board.cpp.s
 
+BodyPart.o: BodyPart.cpp.o
+
+.PHONY : BodyPart.o
+
+# target to build an object file
+BodyPart.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/BodyPart.cpp.o
+.PHONY : BodyPart.cpp.o
+
+BodyPart.i: BodyPart.cpp.i
+
+.PHONY : BodyPart.i
+
+# target to preprocess a source file
+BodyPart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/BodyPart.cpp.i
+.PHONY : BodyPart.cpp.i
+
+BodyPart.s: BodyPart.cpp.s
+
+.PHONY : BodyPart.s
+
+# target to generate assembly for a file
+BodyPart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/BodyPart.cpp.s
+.PHONY : BodyPart.cpp.s
+
 Snake.o: Snake.cpp.o
 
 .PHONY : Snake.o
@@ -266,6 +293,9 @@ help:
 	@echo "... Board.o"
 	@echo "... Board.i"
 	@echo "... Board.s"
+	@echo "... BodyPart.o"
+	@echo "... BodyPart.i"
+	@echo "... BodyPart.s"
 	@echo "... Snake.o"
 	@echo "... Snake.i"
 	@echo "... Snake.s"

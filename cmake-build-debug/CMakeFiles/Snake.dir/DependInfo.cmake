@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/danieleidlin/CLionProjects/Snake/Apple.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Apple.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Board.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Board.cpp.o"
+  "/Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/BodyPart.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Snake.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Snake.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/main.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/main.cpp.o"
   )

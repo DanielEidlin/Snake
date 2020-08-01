@@ -92,6 +92,12 @@
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Board.h">
 			<Option target="Snake"/>
 		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp">
+			<Option target="Snake"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/BodyPart.h">
+			<Option target="Snake"/>
+		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Direction.h">
 			<Option target="Snake"/>
 		</Unit>

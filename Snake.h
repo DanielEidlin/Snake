@@ -8,6 +8,7 @@
 #include <utility>
 #include <vector>
 #include "Direction.h"
+#include "BodyPart.h"
 
 
 class Snake {
@@ -16,7 +17,7 @@ private:
     char body;
     bool movable;
     Direction direction;
-    std::vector<std::pair<int, int>> snakeCoordinates;
+    std::vector<BodyPart> bodyParts;
     std::pair<int, int> previousTailCoordinates;
     bool apple;
 
@@ -27,9 +28,9 @@ public:
 
     ~Snake();
 
-    std::pair<int, int> getHeadCoordinates() const;
+    BodyPart getHeadPart() const;
 
-    std::vector<std::pair<int, int>> getSnakeCoordinates() const;
+    std::vector<BodyPart> getBodyParts() const;
 
     void move();
 

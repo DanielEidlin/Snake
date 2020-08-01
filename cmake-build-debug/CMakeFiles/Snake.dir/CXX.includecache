@@ -24,6 +24,10 @@ Snake.h
 Apple.h
 /Users/danieleidlin/CLionProjects/Snake/Apple.h
 
+/Users/danieleidlin/CLionProjects/Snake/BodyPart.h
+utility
+-
+
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
 
 /Users/danieleidlin/CLionProjects/Snake/Snake.h
@@ -33,4 +37,6 @@ vector
 -
 Direction.h
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
+BodyPart.h
+/Users/danieleidlin/CLionProjects/Snake/BodyPart.h
 
