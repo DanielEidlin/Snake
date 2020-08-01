@@ -7,28 +7,27 @@
 
 
 #include <utility>
+#include <map>
 #include "Direction.h"
 
 class BodyPart {
 private:
     std::pair<int, int> coordinates;
-    char symbol;
     Direction direction;
 
 public:
+    static std::map<Direction, char> headDirectionSymbols;
+    static std::map<Direction, char> bodyDirectionSymbols;
+
     BodyPart(const std::pair<int, int> &coordinates);
 
-    BodyPart(const std::pair<int, int> &coordinates, char symbol, Direction direction);
+    BodyPart(const std::pair<int, int> &coordinates, Direction direction);
 
     ~BodyPart();
 
     std::pair<int, int> getCoordinates() const;
 
     void setCoordinates(std::pair<int, int> newCoordinates);
-
-    char getSymbol() const;
-
-    void setSymbol(char newSymbol);
 
     Direction getDirection() const;
 

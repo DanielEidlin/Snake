@@ -11,13 +11,12 @@ Snake::Snake(int length, std::pair<int, int> spawnCoordinates) : length(length),
                                                                  previousTailCoordinates(spawnCoordinates),
                                                                  apple(false) {
     for (int i = 0; i < this->length - 1; i++) {
-        BodyPart bodyPart = BodyPart(std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second), '*',
+        BodyPart bodyPart = BodyPart(std::pair<int, int>(spawnCoordinates.first + i, spawnCoordinates.second),
                                      Direction::Right);
         bodyParts.push_back(bodyPart);
     }
     BodyPart bodyPart = BodyPart(
-            std::pair<int, int>(spawnCoordinates.first + this->length - 1, spawnCoordinates.second), '>',
-            Direction::Right);
+            std::pair<int, int>(spawnCoordinates.first + this->length - 1, spawnCoordinates.second), Direction::Right);
     bodyParts.push_back(bodyPart);
 }
 
@@ -38,9 +37,8 @@ void Snake::move() {
     switch (headDirection) {
         case Direction::Right:
             // move right
-            bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second), '>',
-                                         Direction::Right));
+            bodyParts.push_back(
+                    BodyPart(std::pair<int, int>(headCoordinates.first + 1, headCoordinates.second), Direction::Right));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -49,9 +47,8 @@ void Snake::move() {
             break;
         case Direction::Left:
             // move left
-            bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second), '<',
-                                         Direction::Left));
+            bodyParts.push_back(
+                    BodyPart(std::pair<int, int>(headCoordinates.first - 1, headCoordinates.second), Direction::Left));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -60,9 +57,8 @@ void Snake::move() {
             break;
         case Direction::Up:
             // move up
-            bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1), '^',
-                                         Direction::Up));
+            bodyParts.push_back(
+                    BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second - 1), Direction::Up));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -71,9 +67,8 @@ void Snake::move() {
             break;
         case Direction::Down:
             // move down
-            bodyParts.back().setSymbol('*');
-            bodyParts.push_back(BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1), 'v',
-                                         Direction::Down));
+            bodyParts.push_back(
+                    BodyPart(std::pair<int, int>(headCoordinates.first, headCoordinates.second + 1), Direction::Down));
             if (!hasApple()) {
                 previousTailCoordinates = bodyParts.front().getCoordinates();
                 bodyParts.erase(bodyParts.begin());
@@ -109,4 +104,12 @@ void Snake::setApple(bool hasApple) {
 
 void Snake::changeHeadDirection(Direction newDirection) {
     bodyParts.back().setDirection(newDirection);
+}
+
+void Snake::updateBodyParts() {
+    for (int i = 0; i < bodyParts.size() - 1; i++) {
+        BodyPart currentBodyPart = bodyParts[i];
+        BodyPart nextBodyPart = bodyParts[i + 1];
+        currentBodyPart.setDirection(nextBodyPart.getDirection());
+    }
 }

@@ -46,6 +46,8 @@ public:
 
     void changeHeadDirection(Direction newDirection);
 
+    void updateBodyParts();
+
 };
 
 
