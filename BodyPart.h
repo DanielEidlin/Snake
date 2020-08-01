@@ -16,6 +16,8 @@ private:
 public:
     BodyPart(const std::pair<int, int> &coordinates);
 
+    BodyPart(const std::pair<int, int> &coordinates, char symbol);
+
     ~BodyPart();
 
     std::pair<int, int> getCoordinates() const;

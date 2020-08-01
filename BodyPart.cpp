@@ -6,6 +6,8 @@
 
 BodyPart::BodyPart(const std::pair<int, int> &coordinates) : coordinates(coordinates) {}
 
+BodyPart::BodyPart(const std::pair<int, int> &coordinates, char symbol) : coordinates(coordinates), symbol(symbol){}
+
 BodyPart::~BodyPart() {}
 
 std::pair<int, int> BodyPart::getCoordinates() const {

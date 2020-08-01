@@ -14,7 +14,6 @@
 class Snake {
 private:
     int length;
-    char body;
     bool movable;
     Direction direction;
     std::vector<BodyPart> bodyParts;
@@ -43,8 +42,6 @@ public:
     bool CanMove() const;
 
     void setCanMove(bool status);
-
-    char getBodyChar() const;
 
     void grow();
 

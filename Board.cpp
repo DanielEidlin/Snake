@@ -42,7 +42,7 @@ void Board::draw() const {
 
     for (int i = 0; i < snakeBodyParts.size(); i++) {
         std::pair<int, int> bodyPartCoordinates = snakeBodyParts[i].getCoordinates();
-        mvwaddch(win, bodyPartCoordinates.second, bodyPartCoordinates.first, snake.getBodyChar());
+        mvwaddch(win, bodyPartCoordinates.second, bodyPartCoordinates.first, snakeBodyParts[i].getSymbol());
     }
 
     mvwaddch(win, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
