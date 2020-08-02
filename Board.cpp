@@ -27,9 +27,7 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     nodelay(fieldWin, TRUE); // make wgetch non-blocking
     keypad(fieldWin, TRUE);  // allow input of special keys
     box(fieldWin, 0, 0); // create border
-
-    // TODO: Make the size of the windows dynamically resizeable.
-    scoreWin = newwin(1, this->width, 0, 0);
+    scoreWin = newwin(1, this->width, 0, 0);    // create score window
     score = 0;
 }
 
