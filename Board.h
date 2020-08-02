@@ -19,8 +19,10 @@ private:
     Snake snake;
     Apple apple;
     int score;
+    static const int SNAKE_PAIR, APPLE_PAIR;
 
 public:
+
     Board(int height, int width, char border_sign = '*');
 
     ~Board();

@@ -13,8 +13,6 @@ utility
 /Users/danieleidlin/CLionProjects/Snake/Board.cpp
 Board.h
 /Users/danieleidlin/CLionProjects/Snake/Board.h
-curses.h
--
 
 /Users/danieleidlin/CLionProjects/Snake/Board.h
 curses.h
@@ -43,14 +41,4 @@ Direction.h
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
 BodyPart.h
 /Users/danieleidlin/CLionProjects/Snake/BodyPart.h
-
-/Users/danieleidlin/CLionProjects/Snake/main.cpp
-iostream
--
-Board.h
-/Users/danieleidlin/CLionProjects/Snake/Board.h
-Snake.h
-/Users/danieleidlin/CLionProjects/Snake/Snake.h
-unistd.h
--
 

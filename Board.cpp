@@ -3,7 +3,9 @@
 //
 
 #include "Board.h"
-#include <curses.h>
+
+const int Board::SNAKE_PAIR = 1;
+const int Board::APPLE_PAIR = 2;
 
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign),
                                                         score(0) {
@@ -29,6 +31,17 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     box(fieldWin, 0, 0); // create border
     scoreWin = newwin(1, this->width, 0, 0);    // create score window
     score = 0;
+
+    if (has_colors() == FALSE) {
+        endwin();
+        printf("Your terminal does not support color\n");
+        exit(1);
+    }
+
+    // Initialize colors
+    start_color();
+    init_pair(SNAKE_PAIR, COLOR_GREEN, COLOR_BLACK);
+    init_pair(APPLE_PAIR, COLOR_RED, COLOR_BLACK);
 }
 
 Board::~Board() {
@@ -44,6 +57,7 @@ void Board::draw() const {
     mvwaddch(fieldWin, previousAppleCoordinates.second, previousAppleCoordinates.first, ' ');
 
     // Draw body parts
+    wattron(fieldWin, COLOR_PAIR(SNAKE_PAIR));
     for (int i = 0; i < snakeBodyParts.size() - 1; i++) {
         BodyPart currentBodyPart = snakeBodyParts[i];
         std::pair<int, int> bodyPartCoordinates = currentBodyPart.getCoordinates();
@@ -56,8 +70,11 @@ void Board::draw() const {
     std::pair<int, int> headPartCoordinates = headPart.getCoordinates();
     char headPartSymbol = BodyPart::directionSymbols[headPart.getDirection()];
     mvwaddch(fieldWin, headPartCoordinates.second, headPartCoordinates.first, headPartSymbol);
+    wattroff(fieldWin, COLOR_PAIR(SNAKE_PAIR));
 
+    wattron(fieldWin, COLOR_PAIR(APPLE_PAIR));
     mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
+    wattroff(fieldWin, COLOR_PAIR(APPLE_PAIR));
     wrefresh(fieldWin);  // refresh field window
     mvwprintw(scoreWin, 0, 0, "Score: %d", score);  // print score
     wrefresh(scoreWin); // refresh score window
