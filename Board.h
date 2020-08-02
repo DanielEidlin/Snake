@@ -14,10 +14,11 @@ private:
     int height;
     int width;
     char border_sign;
-    WINDOW* win;
+    WINDOW* fieldWin;
     WINDOW* scoreWin;
     Snake snake;
     Apple apple;
+    int score;
 
 public:
     Board(int height, int width, char border_sign = '*');
