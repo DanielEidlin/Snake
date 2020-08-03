@@ -28,7 +28,7 @@ void SoundController::playSound(Sound sound) {
     }
 
     // open audio device
-    SDL_AudioDeviceID deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
+    deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
 
     // play audio
     int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
