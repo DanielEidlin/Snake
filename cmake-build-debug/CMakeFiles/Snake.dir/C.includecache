@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.c
+
+/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c
+

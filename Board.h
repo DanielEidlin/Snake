@@ -7,6 +7,7 @@
 #include <curses.h>
 #include "Snake.h"
 #include "Apple.h"
+#include "SoundController.h"
 
 class Board {
 
@@ -20,6 +21,8 @@ private:
     Apple apple;
     int score;
     static const int SNAKE_PAIR, APPLE_PAIR;
+    SoundController soundController = SoundController();
+    Sound currentSound = Sound::None;
 
 public:
 
@@ -27,7 +30,7 @@ public:
 
     ~Board();
 
-    void draw() const ;
+    void draw();
 
     int getHeight() const;
 

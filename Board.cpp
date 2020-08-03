@@ -42,13 +42,14 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     start_color();
     init_pair(SNAKE_PAIR, COLOR_GREEN, COLOR_BLACK);
     init_pair(APPLE_PAIR, COLOR_RED, COLOR_BLACK);
+
 }
 
 Board::~Board() {
     endwin();   // ncurses reset function
 }
 
-void Board::draw() const {
+void Board::draw() {
     std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();
     std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
     mvwaddch(fieldWin, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
@@ -76,6 +77,8 @@ void Board::draw() const {
     mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
     wattroff(fieldWin, COLOR_PAIR(APPLE_PAIR));
     wrefresh(fieldWin);  // refresh field window
+    soundController.playSound(currentSound);    // play sound effect if needed
+    currentSound = Sound::None; // reset sound effect
     mvwprintw(scoreWin, 0, 0, "Score: %d", score);  // print score
     wrefresh(scoreWin); // refresh score window
 }
@@ -167,6 +170,7 @@ void Board::checkAppleEngage() {
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
     if (headCoordinates == appleCoordinates) {
         snake.setApple(true);
+        currentSound = Sound::Apple;
         score++;
         spawnApple();
     }

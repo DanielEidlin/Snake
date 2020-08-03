@@ -8,12 +8,14 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/danieleidlin/CLionProjects/Snake/Board.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Board.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/BodyPart.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Snake.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Snake.cpp.o"
+  "/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/SoundController.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/main.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2"
   )
 
 # Targets to which this target links.

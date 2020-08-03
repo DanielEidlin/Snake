@@ -5,7 +5,7 @@
 		<Option title="Snake"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug"/>
@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
@@ -65,6 +66,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
@@ -107,11 +109,26 @@
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Snake.h">
 			<Option target="Snake"/>
 		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Sound.h">
+			<Option target="Snake"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp">
+			<Option target="Snake"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/SoundController.h">
+			<Option target="Snake"/>
+		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/main.cpp">
 			<Option target="Snake"/>
 		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/../../../../usr/local/lib/cmake/SDL2/sdl2-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
+		</Unit>
+		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/../../../../usr/local/lib/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

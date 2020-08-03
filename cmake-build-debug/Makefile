@@ -251,6 +251,33 @@ Snake.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/Snake.cpp.s
 .PHONY : Snake.cpp.s
 
+SoundController.o: SoundController.cpp.o
+
+.PHONY : SoundController.o
+
+# target to build an object file
+SoundController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/SoundController.cpp.o
+.PHONY : SoundController.cpp.o
+
+SoundController.i: SoundController.cpp.i
+
+.PHONY : SoundController.i
+
+# target to preprocess a source file
+SoundController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/SoundController.cpp.i
+.PHONY : SoundController.cpp.i
+
+SoundController.s: SoundController.cpp.s
+
+.PHONY : SoundController.s
+
+# target to generate assembly for a file
+SoundController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/SoundController.cpp.s
+.PHONY : SoundController.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -299,6 +326,9 @@ help:
 	@echo "... Snake.o"
 	@echo "... Snake.i"
 	@echo "... Snake.s"
+	@echo "... SoundController.o"
+	@echo "... SoundController.i"
+	@echo "... SoundController.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
