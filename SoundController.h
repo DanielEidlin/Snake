@@ -12,7 +12,7 @@
 
 class SoundController {
 private:
-    std::string appleSoundPath = "../sound/apple.wav";
+    std::string soundPath;
     SDL_AudioSpec wavSpec;
     Uint32 wavLength;
     Uint8* wavBuffer;
@@ -21,9 +21,11 @@ private:
 public:
     SoundController();
 
+    SoundController(std::string soundPath);
+
     ~SoundController();
 
-    void playSound(Sound sound);
+    void playSound();
 
 };
 

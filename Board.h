@@ -21,8 +21,8 @@ private:
     Apple apple;
     int score;
     static const int SNAKE_PAIR, APPLE_PAIR;
-    SoundController soundController = SoundController();
-    Sound currentSound = Sound::None;
+    SoundController appleSoundController = SoundController("../sound/apple.wav");
+    bool playAppleSound;
 
 public:
 

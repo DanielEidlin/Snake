@@ -4,9 +4,15 @@
 
 #include "SoundController.h"
 
-SoundController::SoundController() {
+SoundController::SoundController() {}
+
+SoundController::SoundController(std::string soundPath) : soundPath(soundPath) {
     // Initialize audio subsystem
     SDL_Init(SDL_INIT_AUDIO);
+    // load WAV file
+    SDL_LoadWAV(soundPath.c_str(), &wavSpec, &wavBuffer, &wavLength);
+    // open audio device
+    deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
 }
 
 SoundController::~SoundController() {
@@ -16,20 +22,7 @@ SoundController::~SoundController() {
     SDL_Quit();
 }
 
-void SoundController::playSound(Sound sound) {
-    // load WAV file
-    switch (sound) {
-        case Sound::Apple:
-            SDL_LoadWAV(appleSoundPath.c_str(), &wavSpec, &wavBuffer, &wavLength);
-            break;
-
-        default:
-            return;
-    }
-
-    // open audio device
-    deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
-
+void SoundController::playSound() {
     // play audio
     int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
     SDL_PauseAudioDevice(deviceId, 0);

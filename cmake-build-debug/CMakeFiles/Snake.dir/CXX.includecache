@@ -6,11 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/Users/danieleidlin/CLionProjects/Snake/Sound.h
+/Users/danieleidlin/CLionProjects/Snake/Apple.h
+utility
+-
 
-/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp
+/Users/danieleidlin/CLionProjects/Snake/Board.cpp
+Board.h
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+curses.h
+-
+Snake.h
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
+Apple.h
+/Users/danieleidlin/CLionProjects/Snake/Apple.h
 SoundController.h
 /Users/danieleidlin/CLionProjects/Snake/SoundController.h
+
+/Users/danieleidlin/CLionProjects/Snake/BodyPart.h
+utility
+-
+map
+-
+Direction.h
+/Users/danieleidlin/CLionProjects/Snake/Direction.h
+
+/Users/danieleidlin/CLionProjects/Snake/Direction.h
+
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
+utility
+-
+vector
+-
+Direction.h
+/Users/danieleidlin/CLionProjects/Snake/Direction.h
+BodyPart.h
+/Users/danieleidlin/CLionProjects/Snake/BodyPart.h
+
+/Users/danieleidlin/CLionProjects/Snake/Sound.h
 
 /Users/danieleidlin/CLionProjects/Snake/SoundController.h
 SDL.h
@@ -19,6 +53,16 @@ string
 -
 Sound.h
 /Users/danieleidlin/CLionProjects/Snake/Sound.h
+
+/Users/danieleidlin/CLionProjects/Snake/main.cpp
+iostream
+-
+Board.h
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+Snake.h
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
+unistd.h
+-
 
 /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
 SDL_main.h

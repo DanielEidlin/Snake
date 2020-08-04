@@ -22,5 +22,22 @@ int main() {
     }
     // board.lose();
 
+//    // Initialize audio subsystem
+//    SDL_Init(SDL_INIT_AUDIO);
+//    SDL_AudioSpec wavSpec;
+//    Uint32 wavLength;
+//    Uint8 *wavBuffer;
+//    SDL_LoadWAV("../sound/apple.wav", &wavSpec, &wavBuffer, &wavLength);
+//    // open audio device
+//    SDL_AudioDeviceID deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
+//
+//    for (int i = 1; i < 51; i++) {
+//        std::cout << i << std::endl;
+//        // play audio
+//        int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
+//        SDL_PauseAudioDevice(deviceId, 0);
+//        SDL_Delay(1000);
+//    }
+
     return 0;
 }
