@@ -10,9 +10,12 @@ int main() {
     Snake &snake = board.getSnake();
     while (true) {  // game loop
         board.getInput();
-        if (snake.CanMove())
+        if (snake.CanMove()) {
             snake.move();
+            board.spawnDioItem();   // try to spawn dio item
+        }
         board.checkAppleEngage();   // check if the snake engaged the apple
+        board.checkDioEngage();   // check if the snake engaged the Dio item
         board.draw();   // draw the state of the game
         if (board.snakeCollided()) {
             usleep(300000); // delay for 300 ms to make snake collision detectable

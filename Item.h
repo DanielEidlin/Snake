@@ -1,36 +1,40 @@
 //
-// Created by Daniel Eidlin on 31/07/2020.
+// Created by Daniel Eidlin on 05/08/2020.
 //
 
-#ifndef SNAKE_APPLE_H
-#define SNAKE_APPLE_H
-
-
+#ifndef SNAKE_ITEM_H
+#define SNAKE_ITEM_H
 #include <utility>
 
-class Apple {
+
+class Item {
 private:
     std::pair<int, int> coordinates;
     std::pair<int, int> previousCoordinates;
-    char appleChar;
+    char itemChar;
 
 public:
-    Apple();
+    Item();
 
-    Apple(std::pair<int, int> spawnCoordinates, char appleChar = '@');
+    Item(std::pair<int, int> spawnCoordinates, char itemChar);
 
-    ~Apple();
+    ~Item();
 
     std::pair<int, int> getCoordinates() const;
 
     void setCoordinates(std::pair<int, int> newCoordinates);
 
-    char getAppleChar() const;
+    char getItemChar() const;
+
+    void setItemChar(char newItemChar);
 
     std::pair<int, int> getPreviousCoordinates() const;
 
     void setPreviousCoordinates(std::pair<int, int> newCoordinates);
+
+    void spawn(int width, int height);
+
 };
 
 
-#endif //SNAKE_APPLE_H
+#endif //SNAKE_ITEM_H

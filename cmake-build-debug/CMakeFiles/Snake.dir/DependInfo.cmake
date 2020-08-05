@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/danieleidlin/CLionProjects/Snake/Apple.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Apple.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Board.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Board.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/BodyPart.cpp.o"
+  "/Users/danieleidlin/CLionProjects/Snake/Item.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Item.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Snake.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Snake.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/SoundController.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/main.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/main.cpp.o"

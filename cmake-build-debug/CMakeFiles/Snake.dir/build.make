@@ -116,22 +116,9 @@ CMakeFiles/Snake.dir/Snake.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/Snake.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danieleidlin/CLionProjects/Snake/Snake.cpp -o CMakeFiles/Snake.dir/Snake.cpp.s
 
-CMakeFiles/Snake.dir/Apple.cpp.o: CMakeFiles/Snake.dir/flags.make
-CMakeFiles/Snake.dir/Apple.cpp.o: ../Apple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Snake.dir/Apple.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Snake.dir/Apple.cpp.o -c /Users/danieleidlin/CLionProjects/Snake/Apple.cpp
-
-CMakeFiles/Snake.dir/Apple.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Snake.dir/Apple.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danieleidlin/CLionProjects/Snake/Apple.cpp > CMakeFiles/Snake.dir/Apple.cpp.i
-
-CMakeFiles/Snake.dir/Apple.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/Apple.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danieleidlin/CLionProjects/Snake/Apple.cpp -o CMakeFiles/Snake.dir/Apple.cpp.s
-
 CMakeFiles/Snake.dir/BodyPart.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../BodyPart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Snake.dir/BodyPart.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Snake.dir/BodyPart.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Snake.dir/BodyPart.cpp.o -c /Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp
 
 CMakeFiles/Snake.dir/BodyPart.cpp.i: cmake_force
@@ -144,7 +131,7 @@ CMakeFiles/Snake.dir/BodyPart.cpp.s: cmake_force
 
 CMakeFiles/Snake.dir/SoundController.cpp.o: CMakeFiles/Snake.dir/flags.make
 CMakeFiles/Snake.dir/SoundController.cpp.o: ../SoundController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Snake.dir/SoundController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Snake.dir/SoundController.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Snake.dir/SoundController.cpp.o -c /Users/danieleidlin/CLionProjects/Snake/SoundController.cpp
 
 CMakeFiles/Snake.dir/SoundController.cpp.i: cmake_force
@@ -155,14 +142,27 @@ CMakeFiles/Snake.dir/SoundController.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/SoundController.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danieleidlin/CLionProjects/Snake/SoundController.cpp -o CMakeFiles/Snake.dir/SoundController.cpp.s
 
+CMakeFiles/Snake.dir/Item.cpp.o: CMakeFiles/Snake.dir/flags.make
+CMakeFiles/Snake.dir/Item.cpp.o: ../Item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Snake.dir/Item.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Snake.dir/Item.cpp.o -c /Users/danieleidlin/CLionProjects/Snake/Item.cpp
+
+CMakeFiles/Snake.dir/Item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Snake.dir/Item.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danieleidlin/CLionProjects/Snake/Item.cpp > CMakeFiles/Snake.dir/Item.cpp.i
+
+CMakeFiles/Snake.dir/Item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Snake.dir/Item.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danieleidlin/CLionProjects/Snake/Item.cpp -o CMakeFiles/Snake.dir/Item.cpp.s
+
 # Object files for target Snake
 Snake_OBJECTS = \
 "CMakeFiles/Snake.dir/main.cpp.o" \
 "CMakeFiles/Snake.dir/Board.cpp.o" \
 "CMakeFiles/Snake.dir/Snake.cpp.o" \
-"CMakeFiles/Snake.dir/Apple.cpp.o" \
 "CMakeFiles/Snake.dir/BodyPart.cpp.o" \
-"CMakeFiles/Snake.dir/SoundController.cpp.o"
+"CMakeFiles/Snake.dir/SoundController.cpp.o" \
+"CMakeFiles/Snake.dir/Item.cpp.o"
 
 # External object files for target Snake
 Snake_EXTERNAL_OBJECTS =
@@ -170,9 +170,9 @@ Snake_EXTERNAL_OBJECTS =
 Snake: CMakeFiles/Snake.dir/main.cpp.o
 Snake: CMakeFiles/Snake.dir/Board.cpp.o
 Snake: CMakeFiles/Snake.dir/Snake.cpp.o
-Snake: CMakeFiles/Snake.dir/Apple.cpp.o
 Snake: CMakeFiles/Snake.dir/BodyPart.cpp.o
 Snake: CMakeFiles/Snake.dir/SoundController.cpp.o
+Snake: CMakeFiles/Snake.dir/Item.cpp.o
 Snake: CMakeFiles/Snake.dir/build.make
 Snake: CMakeFiles/Snake.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Snake"

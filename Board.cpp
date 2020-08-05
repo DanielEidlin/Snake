@@ -8,7 +8,8 @@ const int Board::SNAKE_PAIR = 1;
 const int Board::APPLE_PAIR = 2;
 
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign),
-                                                        score(0), playAppleSound(false) {
+                                                        score(0), playAppleSound(false), playDioSound(false),
+                                                        dioEffect(false) {
     // Initialize Snake ----------------------------------------------------------------------------------------
     int xCoordinate = this->width / 2;
     int yCoordinate = this->height / 2;
@@ -19,7 +20,9 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     int randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
     int randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
     std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
-    apple = Apple(appleSpawnCoordinates);
+    apple = Item(appleSpawnCoordinates, '@');
+    // Initialize Dio item
+    dioItem = Item();
     // Initialize window ----------------------------------------------------------------------------------------
     initscr();  // ncurses initializer
     curs_set(0);    // hide cursor
@@ -53,6 +56,8 @@ void Board::draw() {
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
     std::pair<int, int> previousAppleCoordinates = apple.getPreviousCoordinates();
     mvwaddch(fieldWin, previousAppleCoordinates.second, previousAppleCoordinates.first, ' ');
+    std::pair<int, int> previousDioCoordinates = dioItem.getPreviousCoordinates();
+    mvwaddch(fieldWin, previousDioCoordinates.second, previousDioCoordinates.first, ' ');
 
     // Draw body parts
     wattron(fieldWin, COLOR_PAIR(SNAKE_PAIR));
@@ -71,12 +76,20 @@ void Board::draw() {
     wattroff(fieldWin, COLOR_PAIR(SNAKE_PAIR));
 
     wattron(fieldWin, COLOR_PAIR(APPLE_PAIR));
-    mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getAppleChar());  // draw apple
+    mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getItemChar());  // draw apple
     wattroff(fieldWin, COLOR_PAIR(APPLE_PAIR));
+
+    std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
+    mvwaddch(fieldWin, dioCoordinates.second, dioCoordinates.first, dioItem.getItemChar()); // draw Dio item
+
     wrefresh(fieldWin);  // refresh field window
-    if (playAppleSound){
+    if (playAppleSound) {
         appleSoundController.playSound();   // play apple sound if needed
         playAppleSound = false;
+    }
+    if (playDioSound) {
+        dioSoundController.playSound();   // play Dio sound if needed
+        playDioSound = false;
     }
     mvwprintw(scoreWin, 0, 0, "Score: %d", score);  // print score
     wrefresh(scoreWin); // refresh score window
@@ -156,14 +169,6 @@ bool Board::snakeCollided() const {
 
 }
 
-void Board::spawnApple() {
-    int randomXCoordinate = 1 + (rand() % (this->width - 2));  // Random x coordinate in the board's range
-    int randomYCoordinate = 1 + (rand() % (this->height - 2));  // Random y coordinate in the board's range
-    std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
-    apple.setPreviousCoordinates(apple.getCoordinates());
-    apple.setCoordinates(appleSpawnCoordinates);
-}
-
 void Board::checkAppleEngage() {
     std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
     std::pair<int, int> appleCoordinates = apple.getCoordinates();
@@ -171,10 +176,28 @@ void Board::checkAppleEngage() {
         snake.setApple(true);
         playAppleSound = true;
         score++;
-        spawnApple();
+        apple.spawn(width, height);
     }
 }
 
 void Board::endGame() {
     endwin();   // ncurses reset function
+}
+
+void Board::spawnDioItem() {
+    int spawnCondition = (int) (rand() % 20);
+    if (spawnCondition == 0) {
+        dioItem.spawn(width, height);
+        dioItem.setItemChar('?');
+    }
+}
+
+void Board::checkDioEngage() {
+    std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
+    std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
+    if (headCoordinates == dioCoordinates) {
+        dioEffect = true;
+        playDioSound = true;
+        dioItem.setCoordinates(std::pair<int, int>());
+    }
 }

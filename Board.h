@@ -6,7 +6,7 @@
 #define SNAKE_BOARD_H
 #include <curses.h>
 #include "Snake.h"
-#include "Apple.h"
+#include "Item.h"
 #include "SoundController.h"
 
 class Board {
@@ -18,11 +18,15 @@ private:
     WINDOW* fieldWin;
     WINDOW* scoreWin;
     Snake snake;
-    Apple apple;
+    Item apple;
+    Item dioItem;
     int score;
     static const int SNAKE_PAIR, APPLE_PAIR;
     SoundController appleSoundController = SoundController("../sound/apple.wav");
+    SoundController dioSoundController = SoundController("../sound/dio.wav");
     bool playAppleSound;
+    bool playDioSound;
+    bool dioEffect;
 
 public:
 
@@ -42,11 +46,13 @@ public:
 
     bool snakeCollided() const;
 
-    void spawnApple();
-
     void checkAppleEngage();
 
     void endGame();
+
+    void spawnDioItem();
+
+    void checkDioEngage();
 
 };
 
