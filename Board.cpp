@@ -44,9 +44,7 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     init_pair(APPLE_PAIR, COLOR_RED, COLOR_BLACK);
 }
 
-Board::~Board() {
-    endwin();   // ncurses reset function
-}
+Board::~Board() {}
 
 void Board::draw() {
     std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();
@@ -175,4 +173,8 @@ void Board::checkAppleEngage() {
         score++;
         spawnApple();
     }
+}
+
+void Board::endGame() {
+    endwin();   // ncurses reset function
 }

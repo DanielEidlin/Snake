@@ -46,6 +46,8 @@ public:
 
     void checkAppleEngage();
 
+    void endGame();
+
 };
 
 
