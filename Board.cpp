@@ -22,7 +22,10 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
     apple = Item(appleSpawnCoordinates, '@');
     // Initialize Dio item
-    dioItem = Item();
+    randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
+    randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
+    std::pair<int, int> dioSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
+    dioItem = DioItem(dioSpawnCoordinates, '?');
     // Initialize window ----------------------------------------------------------------------------------------
     initscr();  // ncurses initializer
     curs_set(0);    // hide cursor
@@ -79,8 +82,11 @@ void Board::draw() {
     mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getItemChar());  // draw apple
     wattroff(fieldWin, COLOR_PAIR(APPLE_PAIR));
 
-    std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
-    mvwaddch(fieldWin, dioCoordinates.second, dioCoordinates.first, dioItem.getItemChar()); // draw Dio item
+    if (dioItem.isActive()) {
+        // draw Dio item if active
+        std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
+        mvwaddch(fieldWin, dioCoordinates.second, dioCoordinates.first, dioItem.getItemChar());
+    }
 
     wrefresh(fieldWin);  // refresh field window
     if (playAppleSound) {
@@ -184,20 +190,24 @@ void Board::endGame() {
     endwin();   // ncurses reset function
 }
 
-void Board::spawnDioItem() {
-    int spawnCondition = (int) (rand() % 20);
-    if (spawnCondition == 0) {
-        dioItem.spawn(width, height);
-        dioItem.setItemChar('?');
+void Board::activateDioItem() {
+    if (!dioItem.isActive()) {
+        int activationCondition = (int) (rand() % 400);
+        if (activationCondition == 0) {
+            dioItem.setActive(true);
+        }
     }
 }
 
 void Board::checkDioEngage() {
-    std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
-    std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
-    if (headCoordinates == dioCoordinates) {
-        dioEffect = true;
-        playDioSound = true;
-        dioItem.setCoordinates(std::pair<int, int>());
+    if (dioItem.isActive()) {
+        std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
+        std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
+        if (headCoordinates == dioCoordinates) {
+            dioEffect = true;
+            playDioSound = true;
+            dioItem.spawn(width, height);
+            dioItem.setActive(false);
+        }
     }
 }

@@ -5,6 +5,7 @@ CMakeFiles/Snake.dir/Board.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Board.cpp
  /Users/danieleidlin/CLionProjects/Snake/Board.h
  /Users/danieleidlin/CLionProjects/Snake/BodyPart.h
+ /Users/danieleidlin/CLionProjects/Snake/DioItem.h
  /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Item.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
@@ -60,6 +61,10 @@ CMakeFiles/Snake.dir/BodyPart.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp
  /Users/danieleidlin/CLionProjects/Snake/BodyPart.h
  /Users/danieleidlin/CLionProjects/Snake/Direction.h
+CMakeFiles/Snake.dir/DioItem.cpp.o
+ /Users/danieleidlin/CLionProjects/Snake/DioItem.cpp
+ /Users/danieleidlin/CLionProjects/Snake/DioItem.h
+ /Users/danieleidlin/CLionProjects/Snake/Item.h
 CMakeFiles/Snake.dir/Item.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Item.cpp
  /Users/danieleidlin/CLionProjects/Snake/Item.h
@@ -121,6 +126,7 @@ CMakeFiles/Snake.dir/SoundController.cpp.o
 CMakeFiles/Snake.dir/main.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Board.h
  /Users/danieleidlin/CLionProjects/Snake/BodyPart.h
+ /Users/danieleidlin/CLionProjects/Snake/DioItem.h
  /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Item.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h

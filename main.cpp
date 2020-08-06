@@ -12,7 +12,7 @@ int main() {
         board.getInput();
         if (snake.CanMove()) {
             snake.move();
-            board.spawnDioItem();   // try to spawn dio item
+            board.activateDioItem();   // try to activate dio item
         }
         board.checkAppleEngage();   // check if the snake engaged the apple
         board.checkDioEngage();   // check if the snake engaged the Dio item

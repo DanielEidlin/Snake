@@ -8,7 +8,7 @@
 
 
 class Item {
-private:
+protected:
     std::pair<int, int> coordinates;
     std::pair<int, int> previousCoordinates;
     char itemChar;

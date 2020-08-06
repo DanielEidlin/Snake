@@ -197,6 +197,33 @@ BodyPart.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/BodyPart.cpp.s
 .PHONY : BodyPart.cpp.s
 
+DioItem.o: DioItem.cpp.o
+
+.PHONY : DioItem.o
+
+# target to build an object file
+DioItem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/DioItem.cpp.o
+.PHONY : DioItem.cpp.o
+
+DioItem.i: DioItem.cpp.i
+
+.PHONY : DioItem.i
+
+# target to preprocess a source file
+DioItem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/DioItem.cpp.i
+.PHONY : DioItem.cpp.i
+
+DioItem.s: DioItem.cpp.s
+
+.PHONY : DioItem.s
+
+# target to generate assembly for a file
+DioItem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Snake.dir/build.make CMakeFiles/Snake.dir/DioItem.cpp.s
+.PHONY : DioItem.cpp.s
+
 Item.o: Item.cpp.o
 
 .PHONY : Item.o
@@ -320,6 +347,9 @@ help:
 	@echo "... BodyPart.o"
 	@echo "... BodyPart.i"
 	@echo "... BodyPart.s"
+	@echo "... DioItem.o"
+	@echo "... DioItem.i"
+	@echo "... DioItem.s"
 	@echo "... Item.o"
 	@echo "... Item.i"
 	@echo "... Item.s"

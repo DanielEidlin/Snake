@@ -4,6 +4,7 @@
 CMakeFiles/Snake.dir/Board.cpp.o: ../Board.cpp
 CMakeFiles/Snake.dir/Board.cpp.o: ../Board.h
 CMakeFiles/Snake.dir/Board.cpp.o: ../BodyPart.h
+CMakeFiles/Snake.dir/Board.cpp.o: ../DioItem.h
 CMakeFiles/Snake.dir/Board.cpp.o: ../Direction.h
 CMakeFiles/Snake.dir/Board.cpp.o: ../Item.h
 CMakeFiles/Snake.dir/Board.cpp.o: ../Snake.h
@@ -59,6 +60,10 @@ CMakeFiles/Snake.dir/Board.cpp.o: /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/c
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../BodyPart.cpp
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../BodyPart.h
 CMakeFiles/Snake.dir/BodyPart.cpp.o: ../Direction.h
+
+CMakeFiles/Snake.dir/DioItem.cpp.o: ../DioItem.cpp
+CMakeFiles/Snake.dir/DioItem.cpp.o: ../DioItem.h
+CMakeFiles/Snake.dir/DioItem.cpp.o: ../Item.h
 
 CMakeFiles/Snake.dir/Item.cpp.o: ../Item.cpp
 CMakeFiles/Snake.dir/Item.cpp.o: ../Item.h
@@ -120,6 +125,7 @@ CMakeFiles/Snake.dir/SoundController.cpp.o: /usr/local/Cellar/sdl2/2.0.12_1/incl
 
 CMakeFiles/Snake.dir/main.cpp.o: ../Board.h
 CMakeFiles/Snake.dir/main.cpp.o: ../BodyPart.h
+CMakeFiles/Snake.dir/main.cpp.o: ../DioItem.h
 CMakeFiles/Snake.dir/main.cpp.o: ../Direction.h
 CMakeFiles/Snake.dir/main.cpp.o: ../Item.h
 CMakeFiles/Snake.dir/main.cpp.o: ../Snake.h

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/danieleidlin/CLionProjects/Snake/Board.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Board.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/BodyPart.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/BodyPart.cpp.o"
+  "/Users/danieleidlin/CLionProjects/Snake/DioItem.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/DioItem.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Item.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Item.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/Snake.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/Snake.cpp.o"
   "/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp" "/Users/danieleidlin/CLionProjects/Snake/cmake-build-debug/CMakeFiles/Snake.dir/SoundController.cpp.o"

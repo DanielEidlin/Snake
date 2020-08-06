@@ -19,6 +19,8 @@ Item.h
 /Users/danieleidlin/CLionProjects/Snake/Item.h
 SoundController.h
 /Users/danieleidlin/CLionProjects/Snake/SoundController.h
+DioItem.h
+/Users/danieleidlin/CLionProjects/Snake/DioItem.h
 
 /Users/danieleidlin/CLionProjects/Snake/BodyPart.h
 utility
@@ -27,6 +29,10 @@ map
 -
 Direction.h
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
+
+/Users/danieleidlin/CLionProjects/Snake/DioItem.h
+Item.h
+/Users/danieleidlin/CLionProjects/Snake/Item.h
 
 /Users/danieleidlin/CLionProjects/Snake/Direction.h
 

@@ -8,6 +8,7 @@
 #include "Snake.h"
 #include "Item.h"
 #include "SoundController.h"
+#include "DioItem.h"
 
 class Board {
 
@@ -19,7 +20,7 @@ private:
     WINDOW* scoreWin;
     Snake snake;
     Item apple;
-    Item dioItem;
+    DioItem dioItem;
     int score;
     static const int SNAKE_PAIR, APPLE_PAIR;
     SoundController appleSoundController = SoundController("../sound/apple.wav");
@@ -50,7 +51,7 @@ public:
 
     void endGame();
 
-    void spawnDioItem();
+    void activateDioItem();
 
     void checkDioEngage();
 

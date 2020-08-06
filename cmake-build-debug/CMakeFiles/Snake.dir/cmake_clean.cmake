@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Snake.dir/Board.cpp.o"
   "CMakeFiles/Snake.dir/BodyPart.cpp.o"
+  "CMakeFiles/Snake.dir/DioItem.cpp.o"
   "CMakeFiles/Snake.dir/Item.cpp.o"
   "CMakeFiles/Snake.dir/Snake.cpp.o"
   "CMakeFiles/Snake.dir/SoundController.cpp.o"
