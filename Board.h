@@ -55,6 +55,8 @@ public:
 
     void checkDioEngage();
 
+    bool isDioEffect() const;
+
 };
 
 

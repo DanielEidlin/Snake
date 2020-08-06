@@ -21,7 +21,7 @@ int main() {
             usleep(300000); // delay for 300 ms to make snake collision detectable
             break;
         }
-        usleep(110000); /* delay for 110 ms. if you wonder why 110 ms:
+        board.isDioEffect() ? usleep(250000) : usleep(110000); /* delay for 110 ms. if you wonder why 110 ms:
                         https://github.com/romanedgn/snake-game/blob/master/fSnakeGame.cpp */
     }
 

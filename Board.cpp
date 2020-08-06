@@ -191,11 +191,16 @@ void Board::endGame() {
 }
 
 void Board::activateDioItem() {
-    if (!dioItem.isActive()) {
+    if (!dioItem.isActive() && !dioItem.getCounter()) {
+        dioEffect = false;
         int activationCondition = (int) (rand() % 400);
         if (activationCondition == 0) {
             dioItem.setActive(true);
         }
+    }
+    else if (!dioItem.isActive() && dioItem.getCounter()) {
+        int dioCounter = dioItem.getCounter();
+        dioItem.setCounter(dioCounter - 1);
     }
 }
 
@@ -204,10 +209,15 @@ void Board::checkDioEngage() {
         std::pair<int, int> headCoordinates = snake.getHeadPart().getCoordinates();
         std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
         if (headCoordinates == dioCoordinates) {
-            dioEffect = true;
             playDioSound = true;
             dioItem.spawn(width, height);
             dioItem.setActive(false);
+            dioEffect = true;
+            dioItem.setCounter( 17);
         }
     }
+}
+
+bool Board::isDioEffect() const {
+    return dioEffect;
 }
