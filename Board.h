@@ -61,10 +61,6 @@ public:
 
     void draw();
 
-    int getHeight() const;
-
-    int getWidth() const;
-
     void getInput();
 
     Snake& getSnake();

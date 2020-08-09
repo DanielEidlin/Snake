@@ -143,14 +143,6 @@ void Board::draw() {
     wrefresh(scoreWin); // refresh score window
 }
 
-int Board::getHeight() const {
-    return height;
-}
-
-int Board::getWidth() const {
-    return width;
-}
-
 void Board::getInput() {
     int ch = wgetch(fieldWin);
 
