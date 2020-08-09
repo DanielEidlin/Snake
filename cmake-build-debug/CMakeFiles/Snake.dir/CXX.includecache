@@ -60,6 +60,18 @@ string
 Sound.h
 /Users/danieleidlin/CLionProjects/Snake/Sound.h
 
+/Users/danieleidlin/CLionProjects/Snake/main.cpp
+iostream
+-
+Board.h
+/Users/danieleidlin/CLionProjects/Snake/Board.h
+Snake.h
+/Users/danieleidlin/CLionProjects/Snake/Snake.h
+unistd.h
+-
+unistd.h
+-
+
 /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
 SDL_main.h
 /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL_main.h

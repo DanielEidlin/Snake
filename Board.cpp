@@ -10,23 +10,43 @@ const int Board::APPLE_PAIR = 2;
 Board::Board(int height, int width, char border_sign) : height(height), width(width), border_sign(border_sign),
                                                         score(0), playAppleSound(false), playDioSound(false),
                                                         dioEffect(false) {
-    // Initialize Snake ----------------------------------------------------------------------------------------
+    initializeSnake();
+    initializeApple();
+    initializeDioItem();
+    initializeWindows();
+    initializeColors();
+}
+
+Board::~Board() {}
+
+std::pair<int, int> Board::generateRandomCoordinates() const {
+    srand((unsigned) time(0));
     int xCoordinate = this->width / 2;
     int yCoordinate = this->height / 2;
-    std::pair<int, int> snakeSpawnCoordinates = std::pair<int, int>(xCoordinate, yCoordinate);
+    std::pair<int, int> randomCoordinates = std::pair<int, int>(xCoordinate, yCoordinate);
+    return randomCoordinates;
+}
+
+void Board::initializeSnake() {
+    // Initialize Snake
+    std::pair<int, int> snakeSpawnCoordinates = generateRandomCoordinates();
     snake = Snake(3, snakeSpawnCoordinates);
-    // Initialize Apple ----------------------------------------------------------------------------------------
-    srand((unsigned) time(0));
-    int randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
-    int randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
-    std::pair<int, int> appleSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
+}
+
+void Board::initializeApple() {
+    // Initialize Apple
+    std::pair<int, int> appleSpawnCoordinates = generateRandomCoordinates();
     apple = Item(appleSpawnCoordinates, '@');
+}
+
+void Board::initializeDioItem() {
     // Initialize Dio item
-    randomXCoordinate = 1 + (rand() % (this->width - 2));    // Random x coordinate in the board's range
-    randomYCoordinate = 1 + (rand() % (this->height - 2));   // Random y coordinate in the board's range
-    std::pair<int, int> dioSpawnCoordinates = std::pair<int, int>(randomXCoordinate, randomYCoordinate);
+    std::pair<int, int> dioSpawnCoordinates = generateRandomCoordinates();
     dioItem = DioItem(dioSpawnCoordinates, '?');
-    // Initialize window ----------------------------------------------------------------------------------------
+}
+
+void Board::initializeWindows() {
+    // Initialize windows
     initscr();  // ncurses initializer
     curs_set(0);    // hide cursor
     noecho();   // disable echo
@@ -36,8 +56,9 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     keypad(fieldWin, TRUE);  // allow input of special keys
     box(fieldWin, 0, 0); // create border
     scoreWin = newwin(1, this->width, 0, 0);    // create score window
-    score = 0;
+}
 
+void Board::initializeColors() const {
     if (has_colors() == FALSE) {
         endwin();
         printf("Your terminal does not support color\n");
@@ -49,8 +70,6 @@ Board::Board(int height, int width, char border_sign) : height(height), width(wi
     init_pair(SNAKE_PAIR, COLOR_GREEN, COLOR_BLACK);
     init_pair(APPLE_PAIR, COLOR_RED, COLOR_BLACK);
 }
-
-Board::~Board() {}
 
 void Board::draw() {
     std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();

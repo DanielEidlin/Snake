@@ -35,6 +35,18 @@ public:
 
     ~Board();
 
+    std::pair<int, int> generateRandomCoordinates() const;
+
+    void initializeSnake();
+
+    void initializeApple();
+
+    void initializeDioItem();
+
+    void initializeWindows();
+
+    void initializeColors() const;
+
     void draw();
 
     int getHeight() const;
