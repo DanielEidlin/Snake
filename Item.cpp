@@ -8,8 +8,8 @@
 Item::Item() {}
 
 Item::Item(std::pair<int, int> spawnCoordinates, char itemChar) : coordinates(spawnCoordinates),
-                                                                     previousCoordinates(spawnCoordinates),
-                                                                     itemChar(itemChar) {}
+                                                                  previousCoordinates(spawnCoordinates),
+                                                                  itemChar(itemChar) {}
 
 Item::~Item() {}
 
@@ -17,24 +17,12 @@ std::pair<int, int> Item::getCoordinates() const {
     return coordinates;
 }
 
-void Item::setCoordinates(std::pair<int, int> newCoordinates) {
-    coordinates = newCoordinates;
-}
-
 char Item::getItemChar() const {
     return itemChar;
 }
 
-void Item::setItemChar(char newItemChar) {
-    itemChar = newItemChar;
-}
-
 std::pair<int, int> Item::getPreviousCoordinates() const {
     return previousCoordinates;
-}
-
-void Item::setPreviousCoordinates(std::pair<int, int> newCoordinates) {
-    previousCoordinates = newCoordinates;
 }
 
 void Item::spawn(int width, int height) {

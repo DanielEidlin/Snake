@@ -20,10 +20,6 @@ std::pair<int, int> BodyPart::getCoordinates() const {
     return coordinates;
 }
 
-void BodyPart::setCoordinates(std::pair<int, int> newCoordinates) {
-    coordinates = newCoordinates;
-}
-
 Direction BodyPart::getDirection() const {
     return direction;
 }

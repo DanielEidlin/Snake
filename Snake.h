@@ -38,15 +38,11 @@ public:
 
     void setCanMove(bool status);
 
-    void grow();
-
     bool hasApple() const;
 
     void setApple(bool hasApple);
 
     void changeHeadDirection(Direction newDirection);
-
-    void updateBodyParts();
 
 };
 

@@ -26,8 +26,6 @@ public:
 
     std::pair<int, int> getCoordinates() const;
 
-    void setCoordinates(std::pair<int, int> newCoordinates);
-
     Direction getDirection() const;
 
     void setDirection(Direction newDirection);

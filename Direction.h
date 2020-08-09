@@ -10,7 +10,6 @@ enum class Direction {
     Left,
     Up,
     Down,
-    None
 };
 
 #endif //SNAKE_DIRECTION_H

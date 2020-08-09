@@ -4,6 +4,7 @@
 
 #ifndef SNAKE_BOARD_H
 #define SNAKE_BOARD_H
+
 #include <curses.h>
 #include "Snake.h"
 #include "Item.h"
@@ -16,8 +17,8 @@ private:
     int height;
     int width;
     char border_sign;
-    WINDOW* fieldWin;
-    WINDOW* scoreWin;
+    WINDOW *fieldWin;
+    WINDOW *scoreWin;
     Snake snake;
     Item apple;
     DioItem dioItem;
@@ -63,7 +64,7 @@ public:
 
     void getInput();
 
-    Snake& getSnake();
+    Snake &getSnake();
 
     bool snakeCollided() const;
 

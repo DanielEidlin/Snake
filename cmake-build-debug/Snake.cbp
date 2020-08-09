@@ -115,9 +115,6 @@
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Snake.h">
 			<Option target="Snake"/>
 		</Unit>
-		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/Sound.h">
-			<Option target="Snake"/>
-		</Unit>
 		<Unit filename="/Users/danieleidlin/CLionProjects/Snake/SoundController.cpp">
 			<Option target="Snake"/>
 		</Unit>

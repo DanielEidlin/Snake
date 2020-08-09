@@ -9,7 +9,6 @@ CMakeFiles/Snake.dir/Board.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Item.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
- /Users/danieleidlin/CLionProjects/Snake/Sound.h
  /Users/danieleidlin/CLionProjects/Snake/SoundController.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL_assert.h
@@ -74,7 +73,6 @@ CMakeFiles/Snake.dir/Snake.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Snake.cpp
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
 CMakeFiles/Snake.dir/SoundController.cpp.o
- /Users/danieleidlin/CLionProjects/Snake/Sound.h
  /Users/danieleidlin/CLionProjects/Snake/SoundController.cpp
  /Users/danieleidlin/CLionProjects/Snake/SoundController.h
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h
@@ -130,7 +128,6 @@ CMakeFiles/Snake.dir/main.cpp.o
  /Users/danieleidlin/CLionProjects/Snake/Direction.h
  /Users/danieleidlin/CLionProjects/Snake/Item.h
  /Users/danieleidlin/CLionProjects/Snake/Snake.h
- /Users/danieleidlin/CLionProjects/Snake/Sound.h
  /Users/danieleidlin/CLionProjects/Snake/SoundController.h
  /Users/danieleidlin/CLionProjects/Snake/main.cpp
  /usr/local/Cellar/sdl2/2.0.12_1/include/SDL2/SDL.h

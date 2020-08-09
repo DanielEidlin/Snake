@@ -105,11 +105,3 @@ void Snake::setApple(bool hasApple) {
 void Snake::changeHeadDirection(Direction newDirection) {
     bodyParts.back().setDirection(newDirection);
 }
-
-void Snake::updateBodyParts() {
-    for (int i = 0; i < bodyParts.size() - 1; i++) {
-        BodyPart currentBodyPart = bodyParts[i];
-        BodyPart nextBodyPart = bodyParts[i + 1];
-        currentBodyPart.setDirection(nextBodyPart.getDirection());
-    }
-}
