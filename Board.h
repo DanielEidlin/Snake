@@ -47,6 +47,18 @@ public:
 
     void initializeColors() const;
 
+    void eraseLastDrawings() const;
+
+    void drawSnakeBody() const;
+
+    void drawSnakeHead() const;
+
+    void drawApple() const;
+
+    void drawDioItem() const;
+
+    void playSounds();
+
     void draw();
 
     int getHeight() const;

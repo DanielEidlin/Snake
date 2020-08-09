@@ -71,17 +71,19 @@ void Board::initializeColors() const {
     init_pair(APPLE_PAIR, COLOR_RED, COLOR_BLACK);
 }
 
-void Board::draw() {
-    std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();
+void Board::eraseLastDrawings() const {
+    // Erase previous drawings of the snake and/or the apple and Dio item
     std::pair<int, int> previousTailCoordinates = snake.getPreviousTailCoordinates();
     mvwaddch(fieldWin, previousTailCoordinates.second, previousTailCoordinates.first, ' ');
-    std::pair<int, int> appleCoordinates = apple.getCoordinates();
     std::pair<int, int> previousAppleCoordinates = apple.getPreviousCoordinates();
     mvwaddch(fieldWin, previousAppleCoordinates.second, previousAppleCoordinates.first, ' ');
     std::pair<int, int> previousDioCoordinates = dioItem.getPreviousCoordinates();
     mvwaddch(fieldWin, previousDioCoordinates.second, previousDioCoordinates.first, ' ');
+}
 
-    // Draw body parts
+void Board::drawSnakeBody() const {
+    // Draw snake body parts
+    std::vector<BodyPart> snakeBodyParts = snake.getBodyParts();
     wattron(fieldWin, COLOR_PAIR(SNAKE_PAIR));
     for (int i = 0; i < snakeBodyParts.size() - 1; i++) {
         BodyPart currentBodyPart = snakeBodyParts[i];
@@ -89,25 +91,36 @@ void Board::draw() {
         char bodyPartSymbol = BodyPart::directionSymbols[currentBodyPart.getDirection()];
         mvwaddch(fieldWin, bodyPartCoordinates.second, bodyPartCoordinates.first, bodyPartSymbol);
     }
+    wattroff(fieldWin, COLOR_PAIR(SNAKE_PAIR));
+}
 
-    // Draw head part
+void Board::drawSnakeHead() const {
+    // Draw snake head part
+    wattron(fieldWin, COLOR_PAIR(SNAKE_PAIR));
     BodyPart headPart = snake.getHeadPart();
     std::pair<int, int> headPartCoordinates = headPart.getCoordinates();
     char headPartSymbol = BodyPart::directionSymbols[headPart.getDirection()];
     mvwaddch(fieldWin, headPartCoordinates.second, headPartCoordinates.first, headPartSymbol);
     wattroff(fieldWin, COLOR_PAIR(SNAKE_PAIR));
+}
 
+void Board::drawApple() const {
+    // draw apple
+    std::pair<int, int> appleCoordinates = apple.getCoordinates();
     wattron(fieldWin, COLOR_PAIR(APPLE_PAIR));
-    mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getItemChar());  // draw apple
+    mvwaddch(fieldWin, appleCoordinates.second, appleCoordinates.first, apple.getItemChar());
     wattroff(fieldWin, COLOR_PAIR(APPLE_PAIR));
+}
 
+void Board::drawDioItem() const {
     if (dioItem.isActive()) {
         // draw Dio item if active
         std::pair<int, int> dioCoordinates = dioItem.getCoordinates();
         mvwaddch(fieldWin, dioCoordinates.second, dioCoordinates.first, dioItem.getItemChar());
     }
+}
 
-    wrefresh(fieldWin);  // refresh field window
+void Board::playSounds() {
     if (playAppleSound) {
         appleSoundController.playSound();   // play apple sound if needed
         playAppleSound = false;
@@ -116,6 +129,16 @@ void Board::draw() {
         dioSoundController.playSound();   // play Dio sound if needed
         playDioSound = false;
     }
+}
+
+void Board::draw() {
+    eraseLastDrawings();
+    drawSnakeBody();
+    drawSnakeHead();
+    drawApple();
+    drawDioItem();
+    wrefresh(fieldWin);  // refresh field window
+    playSounds();
     mvwprintw(scoreWin, 0, 0, "Score: %d", score);  // print score
     wrefresh(scoreWin); // refresh score window
 }
